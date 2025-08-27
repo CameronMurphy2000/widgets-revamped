@@ -20,9 +20,23 @@
     </div>
 
     <div class="grid">
-        <div class="widget" id="currency">Currency Converter</div>
+        <div class="widget" id="currency">
+            <h3>Currency Converter</h3>
+            <label for="from-currency">From:</label>
+            <select id="from-currency"></select>
+            <input type="number" id="amount" placeholder="Amount">
+
+            <label for="to-currency">To:</label>
+            <select id="to-currency"></select>
+
+            <button onclick="convertCurrency()">Convert</button>
+            <div id="result"></div>
+        </div>
+
         <div class="widget" id="coinflip">Coin Flipper</div>
+
         <div class="widget" id="weather">Weather App</div>
+
     </div>
 
     <script src="script.js"></script>

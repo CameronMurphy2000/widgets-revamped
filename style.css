@@ -55,7 +55,16 @@ body {
     padding: 40px;
 }
 
+h3 {
+    margin-top: 0;
+}
+
 .widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     background: #373737;
     padding: 20px;
     border-radius: 12px;
