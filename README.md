@@ -1,10 +1,20 @@
 Widgets Revamped
 ================
 
-A little website for learning
------------------------------
+# A little website for learning
 
-Current Widgets
+Finished
 ---------------
 
-> - MIA
+> - N/A
+
+Working on
+----------
+
+> - Currency Converter
+
+Planned
+-------
+
+> - Weather App
+> - Coin Flipper
