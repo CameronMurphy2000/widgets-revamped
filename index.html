@@ -22,15 +22,34 @@
     <div class="grid">
         <div class="widget" id="currency">
             <h3>Currency Converter</h3>
-            <label for="from-currency">From:</label>
-            <select id="from-currency"></select>
-            <input type="number" id="amount" placeholder="Amount">
+            <a class="currency-link" href="https://en.wikipedia.org/wiki/ISO_4217#Active_codes_(list_one)" target="_blank"><span class="word-colour">?</span></a>
+            <div class="from-currency-container">
+                <label for="from-currency">From:</label>
+                <div class="select-wrapper">
+                    <select id="from-currency"></select>
+                </div>
+            </div>
+            <input type="number" min="0" id="amount" placeholder="Amount">
 
-            <label for="to-currency">To:</label>
-            <select id="to-currency"></select>
+            <div class="to-currency-container">
+                <label for="to-currency">To:</label>
+                <div class="select-wrapper">
+                    <select id="to-currency"></select>
+                </div>
+            </div>
 
-            <button onclick="convertCurrency()">Convert</button>
+            <button onclick="convertCurrency()">
+                <span class="button-span">Convert</span>
+            </button>
             <div id="result"></div>
+        </div>
+
+        <div class="widget" id="poke-random">
+            <h3>Pokémon Randomizer</h3>
+            <button onClick="getRandomPokemon()">
+                <span class="button-span">Get Random Pokémon</span>
+            </button>
+            
         </div>
 
         <div class="widget" id="coinflip">Coin Flipper</div>
