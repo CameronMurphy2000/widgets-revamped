@@ -12,6 +12,7 @@ Working on
 ----------
 
 > - Currency Converter
+> - Pokémon Randomizer
 
 Planned
 -------

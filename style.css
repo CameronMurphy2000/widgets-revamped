@@ -92,6 +92,7 @@ h3 {
     font-size: 1rem;
     line-height: 1.5rem;
     width: 100%;
+    outline: none;
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #fff5ee;
@@ -175,6 +176,30 @@ label {
 
 input {
     border: none;
+    max-width: 80%;
+    border-bottom: 2px solid #fff5ee;
+    background: none;
+    font-size: 1.25rem;
+    color: #fff5ee;
+    appearance: none;
+}
+
+input::placeholder {
+    color: #c8c8c8;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input:focus {
+    outline: none;
 }
 
 .currency-link {
@@ -188,4 +213,39 @@ input {
 .currency-link:hover {
     transform: scale(1.1);
     transition: all 250ms ease-in-out;
+}
+
+#result {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    position:relative;
+    display: inline-block;
+}
+
+#result:empty::before,
+#result:empty::after {
+    display: none;
+}
+
+#result::before,
+#result::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;        
+}
+
+#result::before {
+    top: -7px;
+    right: -10px;
+    border-top: 2px solid #f7f452;
+    border-right: 2px solid #f7f452;
+}
+
+#result::after {
+    bottom: -7px;
+    left: -10px;
+    border-bottom: 2px solid #fd7dd4;
+    border-left: 2px solid #fd7dd4;
 }
