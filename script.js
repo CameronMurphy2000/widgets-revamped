@@ -18,7 +18,7 @@ async function fetchCurrencies() {
             fromCurrency.appendChild(option1);
 
             const option2 = document.createElement('option');
-            option2.vaule = currency;
+            option2.value = currency;
             option2.textContent = currency;
             toCurrency.appendChild(option2);
         });
@@ -34,6 +34,11 @@ async function convertCurrency() {
 
     if (!fromCurrency || !toCurrency || !amount) {
         alert('Please fill in all fields');
+        return;
+    }
+
+    if (amount < 1 || amount > 999999999999) {
+        alert('Please enter a valid number above 0 and below 1 trillion');
         return;
     }
 

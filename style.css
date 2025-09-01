@@ -249,3 +249,14 @@ input:focus {
     border-bottom: 2px solid #fd7dd4;
     border-left: 2px solid #fd7dd4;
 }
+
+option {
+    background: #fff5ee;
+    font-family: 'Roboto', sans-serif;
+    color: #1e1e1e;
+    font-weight: 500;
+}
+
+select.decorated option:hover {
+    box-shadow: 0 0 10px 100px #1e1e1e inset;
+}

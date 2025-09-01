@@ -6,12 +6,11 @@ Widgets Revamped
 Finished
 ---------------
 
-> - N/A
+> - Currency Converter
 
 Working on
 ----------
 
-> - Currency Converter
 > - Pokémon Randomizer
 
 Planned
@@ -19,3 +18,10 @@ Planned
 
 > - Weather App
 > - Coin Flipper
+
+Planned Upgrades
+----------------
+
+> - Currency Converter
+  1. Fix styling for currency select dropdown
+
