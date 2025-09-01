@@ -143,10 +143,6 @@ button {
     border: none;
 }
 
-button:hover {
-    color: #fff;
-}
-
 button:active {
     transform: scale(0.95);
 }
@@ -174,7 +170,7 @@ label {
     margin-right: 0.5rem;
 }
 
-input {
+input[type=number] {
     border: none;
     max-width: 80%;
     border-bottom: 2px solid #fff5ee;
@@ -259,4 +255,11 @@ option {
 
 select.decorated option:hover {
     box-shadow: 0 0 10px 100px #1e1e1e inset;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
