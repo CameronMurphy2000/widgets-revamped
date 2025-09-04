@@ -146,4 +146,8 @@ function getRandomPokemon() {
 
     document.getElementById("resultPokemon").textContent = randomPokemon;
 
+    if (choiceArray.length == 0) {
+        alert("Please choose at least one option");
+    }
+
 };
