@@ -258,8 +258,10 @@ select.decorated option:hover {
 }
 
 .checkbox-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
