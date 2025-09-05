@@ -63,8 +63,8 @@ function getRandomPokemon() {
         "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree",
         "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot",
         "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok",
-        "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran♀", "Nidorina",
-        "Nidoqueen", "Nidoran♂", "Nidorino", "Nidoking", "Clefairy", "Clefable",
+        "Pikachu", "Raichu", "Sandshrew", "Sandslash", "Nidoran-f", "Nidorina",
+        "Nidoqueen", "Nidoran-m", "Nidorino", "Nidoking", "Clefairy", "Clefable",
         "Vulpix", "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat",
         "Oddish", "Gloom", "Vileplume", "Paras", "Parasect", "Venonat",
         "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian", "Psyduck",
@@ -79,7 +79,7 @@ function getRandomPokemon() {
         "Exeggutor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung",
         "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela",
         "Kangaskhan", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu",
-        "Starmie", "Mr. Mime", "Scyther", "Jynx", "Electabuzz", "Magmar",
+        "Starmie", "Mr-Mime", "Scyther", "Jynx", "Electabuzz", "Magmar",
         "Pinsir", "Tauros", "Magikarp", "Gyarados", "Lapras", "Ditto",
         "Eevee", "Vaporeon", "Jolteon", "Flareon", "Porygon", "Omanyte",
         "Omastar", "Kabuto", "Kabutops", "Aerodactyl", "Snorlax", "Articuno",
@@ -256,6 +256,10 @@ function getRandomPokemon() {
         "Gouging Fire", "Raging Bolt", "Iron Boulder", "Iron Crown", "Terapagos", "Pecharunt"
     ];
 
+    const testArray = [
+        "Enamorous-Therian"
+    ];
+
     let choiceArray = [];
 
     var gen1Check = document.getElementById("gen1").checked;
@@ -345,13 +349,33 @@ function getRandomPokemon() {
 
     };
 
-    const randomIndex = Math.floor(Math.random() * choiceArray.length);
-    const randomPokemon = choiceArray[randomIndex];
+    var testCheck = document.getElementById("test").checked;
 
-    document.getElementById("resultPokemon").textContent = randomPokemon;
+    if (testCheck) {
+
+        choiceArray.push(...testArray);
+    
+    };
 
     if (choiceArray.length == 0) {
         alert("Please choose at least one option");
     }
+
+    const randomIndex = Math.floor(Math.random() * choiceArray.length);
+    const randomPokemon = choiceArray[randomIndex];
+
+    function formatName(name) {
+        return name
+            .toLowerCase()
+            .split(/[-\s]/)
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" ");
+}
+
+    const displayName = formatName(randomPokemon);
+
+    document.getElementById("resultPokemon").innerHTML = 
+        `<div>${displayName}</div>
+        <img src="https://play.pokemonshowdown.com/sprites/gen5/${randomPokemon.toLowerCase().replace(/[^a-z0-9]/g, "")}.png" />`;
 
 };

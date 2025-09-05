@@ -1,10 +1,10 @@
 Widgets Revamped
 ================
 
-# A little website for learning
+A little website for learning
 
 Finished
----------------
+--------
 
 > - Currency Converter
 
@@ -23,5 +23,5 @@ Planned Upgrades
 ----------------
 
 > - Currency Converter
-  1. Fix styling for currency select dropdown
 
+  1. Fix styling for currency select dropdown
