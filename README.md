@@ -12,6 +12,7 @@ Working on
 ----------
 
 > - Pokémon Randomizer
+> - Times Table Helper
 
 Planned
 -------

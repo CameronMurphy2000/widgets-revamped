@@ -38,9 +38,11 @@
                 </div>
             </div>
 
-            <button onclick="convertCurrency()">
+            <div class="button-container">
+                <button onclick="convertCurrency()">
                 <span class="button-span">Convert</span>
-            </button>
+                </button>
+            </div>
             <div id="result"></div>
         </div>
 
@@ -98,9 +100,32 @@
             <div id="resultPokemon"></div>
         </div>
 
-        <div class="widget" id="coinflip">Coin Flipper</div>
-
         <div class="widget" id="weather">Weather App</div>
+
+        <div class="widget" id="coin-flipper">Coin Flipper</div>
+
+        <div class="widget" id="times-table-helper">
+            <h3>Times Table Helper</h3>
+            <form id="times-table-form">
+                <label for="number">Enter a number:</label>
+                <input type="number" id="number" name="number" required>
+                <br>
+                <label for="limit">Enter a Limit:</label>
+                <input type="number" id="limit" name="limit" required>
+                <br>
+                <button type="submit">
+                    <span class="button-span">Generate Question</span>
+                </button>
+            </form>
+            <div class="question-section" id="question-section" style="display: none">
+                <p id="question"></p>
+                <input type="number" id="answer" placeholder="Your Answer">
+                <button id="checkAnswerButton">
+                    <span class="button-span">Check Answer</span>
+                </button>
+                <p id="feedback"></p>
+            </div>
+        </div>
 
     </div>
 
