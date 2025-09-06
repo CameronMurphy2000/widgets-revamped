@@ -37,8 +37,8 @@ async function convertCurrency() {
         return;
     }
 
-    if (amount < 1 || amount > 999999999999) {
-        alert('Please enter a valid number above 0 and below 1 trillion');
+    if (amount < 0.01 || amount > 999999999999) {
+        alert('Please enter a valid number above 0.01 and below 1 trillion');
         return;
     }
 
@@ -359,6 +359,7 @@ function getRandomPokemon() {
 
     if (choiceArray.length == 0) {
         alert("Please choose at least one option");
+        return;
     }
 
     const randomIndex = Math.floor(Math.random() * choiceArray.length);
@@ -372,12 +373,34 @@ function getRandomPokemon() {
             .join(" ");
 }
 
-    const displayName = formatName(randomPokemon);
+    function showPokemon(randomPokemon) {
+        const displayName = formatName(randomPokemon);
+        const urlName = randomPokemon.toLowerCase().replace(/[^a-z0-9]/g, "");
+        const urlImg = `https://play.pokemonshowdown.com/sprites/gen5/${urlName}.png`;
 
-    document.getElementById("resultPokemon").innerHTML = 
-        `<div>${displayName}</div>
-        <img src="https://play.pokemonshowdown.com/sprites/gen5/${randomPokemon.toLowerCase().replace(/[^a-z0-9]/g, "")}.png" />`;
+        const container = document.getElementById("resultPokemon");
 
+        container.innerHTML = `
+            <div>${displayName}</div>
+            <div class="spinner"></div>
+        `;
+
+        const img = new Image();
+        img.src = urlImg;
+        img.alt = displayName;
+
+        img.onload = () => {
+            container.innerHTML = `<div>${displayName}</div>`;
+            container.appendChild(img);
+        };
+
+        img.onerror = () => {
+            container.innerHTML = `<div>${displayName}</div>
+            <div style="red">Image not available</div>`;
+        };
+    }
+
+    showPokemon(randomPokemon);
 };
 
 // Times Table Helper

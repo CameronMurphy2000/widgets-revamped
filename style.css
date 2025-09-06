@@ -278,3 +278,22 @@ select.decorated option:hover {
     position:relative;
     display: inline-block;
 }
+
+.spinner {
+    border: 4px solid #f7f452;
+    border-top: 4px solid #fd7dd4;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+canvas {
+    max-width: 100%;
+}
