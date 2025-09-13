@@ -72,7 +72,8 @@ h3 {
     border-radius: 12px;
     border: 1px solid #c8c8c8;
     position: relative;
-}
+} 
+
 .from-currency-container, .to-currency-container {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -275,7 +276,7 @@ select.decorated option:hover {
 #resultPokemon {
     margin-top: 2rem;
     font-size: 1.25rem;
-    position:relative;
+    position: relative;
     display: inline-block;
 }
 
@@ -297,3 +298,9 @@ select.decorated option:hover {
 canvas {
     max-width: 100%;
 }
+
+@media only screen and (min-width: 300px) and (max-width: 620px) {
+    .widget {
+        height: 50vh;
+    }
+} 
