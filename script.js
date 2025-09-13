@@ -430,3 +430,41 @@ document.getElementById("times-table-form").addEventListener("submit", function(
         }
     }
 });
+
+// Fatebringer
+
+let options = [];
+
+function addOption() {
+    const newOption = document.getElementById("option").value;
+
+    options.push(newOption);
+
+    document.getElementById("option-section").style.display = "block";
+
+    renderOptions();
+
+    input.value = "";
+
+};
+
+function renderOptions() {
+    const list =document.getElementById("option-list");
+
+    list.innerHTML = "";
+
+    options.forEach((option) => {
+        const li = document.createElement("li");
+        li.textContent = option;
+        list.appendChild(li);
+    });
+}
+
+function decideFate() {
+    const optionsRandIndex = Math.floor(Math.random() * options.length);
+    const finalChoice = options[optionsRandIndex];
+
+    const p = document.getElementById("final-choice");
+
+    p.innerHTML = `${finalChoice}`;
+};
