@@ -13,6 +13,7 @@ Working on
 
 > - Pokémon Randomizer
 > - Times Table Helper
+> - Fatebringer
 
 Planned
 -------
