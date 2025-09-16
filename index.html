@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -176,6 +178,102 @@
             <button class="positive-button" onclick="positive()" style="display: none">
                 <span class="button-span">+</span>
             </button>
+        </div>
+
+        <!-- Calculator -->
+
+        <div class="widget" id="calculator-container">
+            <h3>Calculator</h3>
+                <div id="calculator">
+                <input id="display" readonly>
+                <div id="keys">
+                    <div class="spacer">
+                        <button class="calc-button operator-btn" onclick="appendToDisplay('+')">
+                            <span class="button-span">+</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button" onclick="appendToDisplay('7')">
+                            <span class="button-span">7</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button" onclick="appendToDisplay('8')">
+                            <span class="button-span">8</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button" onclick="appendToDisplay('9')">
+                            <span class="button-span">9</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button operator-btn" onclick="appendToDisplay('-')">
+                            <span class="button-span">-</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button" onclick="appendToDisplay('4')">
+                            <span class="button-span">4</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button" onclick="appendToDisplay('5')">
+                            <span class="button-span">5</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button" onclick="appendToDisplay('6')">
+                            <span class="button-span">6</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button operator-btn" onclick="appendToDisplay('*')">
+                            <span class="button-span">*</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button" onclick="appendToDisplay('1')">
+                            <span class="button-span">1</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button" onclick="appendToDisplay('2')">
+                            <span class="button-span">2</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button" onclick="appendToDisplay('3')">
+                            <span class="button-span">3</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button operator-btn" onclick="appendToDisplay('/')">
+                            <span class="button-span">/</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button" onclick="appendToDisplay('0')">
+                            <span class="button-span">0</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button" onclick="appendToDisplay('.')">
+                            <span class="button-span">.</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button" onclick="calculate()">
+                            <span class="button-span">=</span>
+                        </button>
+                    </div>
+                    <div class="spacer">
+                        <button class="calc-button operator-btn" onclick="clearDisplay()">
+                            <span class="button-span">C</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="widget" id="coin-flipper">Coin Flipper</div>

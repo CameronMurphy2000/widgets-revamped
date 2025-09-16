@@ -7,6 +7,7 @@ Finished
 --------
 
 > - Currency Converter
+> - Calculator
 
 Working on
 ----------

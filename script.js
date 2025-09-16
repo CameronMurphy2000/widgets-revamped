@@ -1,4 +1,5 @@
 // Currency Converter
+
 const apiKey = '3d5d4dc5e856270ae07ded59';
 const baseCurrency = 'GBP';
 const apiUrl = `https://v6.exchangerate-api.com/v6/3d5d4dc5e856270ae07ded59/latest/${baseCurrency}`;
@@ -56,6 +57,7 @@ async function convertCurrency() {
 document.addEventListener('DOMContentLoaded', fetchCurrencies);
 
 // Pokémon Randomizer
+
 function getRandomPokemon() {
 
     const gen1Array = [
@@ -404,6 +406,7 @@ function getRandomPokemon() {
 };
 
 // Times Table Helper
+
 document.getElementById("times-table-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -590,4 +593,34 @@ function positive() {
     document.documentElement.style.filter = "invert(0)";
     document.querySelector(".negative-button").style.display = "block";
     document.querySelector(".positive-button").style.display = "none";
+}
+
+// Calculator
+
+const display = document.getElementById("display");
+
+function appendToDisplay(input) {
+
+    display.value += input;
+
+}
+
+function clearDisplay() {
+
+    display.value = "";
+
+}
+
+function calculate() {
+
+    try {
+
+        display.value = eval(display.value);
+
+    }
+    catch(error) {
+
+        display.value = "Error";
+        
+    }
 }
