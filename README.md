@@ -14,12 +14,14 @@ Working on
 > - Pokémon Randomizer
 > - Times Table Helper
 > - Fatebringer
+> - Filters
 
 Planned
 -------
 
 > - Weather App
 > - Coin Flipper
+> - Translator
 
 Planned Upgrades
 ----------------

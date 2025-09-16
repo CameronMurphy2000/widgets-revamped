@@ -128,6 +128,8 @@
                 <p id="feedback"></p>
             </div>
         </div>
+
+        <!-- Fatebringer -->
       
         <div class="widget" id="decider">
             <h3>Fatebringer</h3>
@@ -148,10 +150,33 @@
                 <p id="final-choice"></p>
             </div>
         </div>
-  
-        <div class="widget" id="cube"></div>
 
-        <div class="widget" id="weather">Weather App</div>
+        <!-- Weather App -->
+
+        <div class="widget" id="weather">
+            <h3>Weather Checker</h3>
+            <form class="weather-form">
+                <input type="text" class="city-input" placeholer="Enter City">
+                <button type="submit">
+                    <span class="button-span">Get Weather</span>
+                </button>
+            </form>
+
+            <div class="card" style="display: none">
+            </div>
+        </div>
+
+        <!-- Filters -->
+
+        <div class="widget" id="filters">
+            <h3>Filters</h3>
+            <button class="negative-button" onclick="negative()">
+                <span class="button-span">-</span>
+            </button>
+            <button class="positive-button" onclick="positive()" style="display: none">
+                <span class="button-span">+</span>
+            </button>
+        </div>
 
         <div class="widget" id="coin-flipper">Coin Flipper</div>
 

@@ -149,6 +149,9 @@ button:active {
 }
 
 .button-span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -296,17 +299,13 @@ select.decorated option:hover {
     100% { transform: rotate(360deg); }
 }
 
-canvas {
-    max-width: 100%;
-}
-
 .fatebringer-input-container input {
     max-width: 60%;
     margin-right: 1rem;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 620px) {
-    .widget {
-        height: 50vh;
-    }
-} 
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
