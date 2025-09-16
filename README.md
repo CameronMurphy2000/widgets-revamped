@@ -16,13 +16,23 @@ Working on
 > - Times Table Helper
 > - Fatebringer
 > - Filters
+> - Weather App
 
 Planned
 -------
 
-> - Weather App
 > - Coin Flipper
 > - Translator
+> - Unit Converter
+> - World Clock / Time Zone Converter
+> - Password Generator
+> - Countdown Timer
+> - Stopwatch
+> - Dice Roller
+> - Colour Generator
+> - Tamagotchi
+> - Mood Light
+> - Noise Generator
 
 Planned Upgrades
 ----------------
