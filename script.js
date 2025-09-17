@@ -583,33 +583,73 @@ function displayError(message) {
 
 // Filters
 
-function negative() {
-    document.documentElement.style.filter = "invert(1)";
-    document.querySelector(".negative-button").style.display = "none";
-    document.querySelector(".positive-button").style.display = "block";
+const invertSlider = document.getElementById("invert");
+const blurSlider = document.getElementById("blur");
+const contrastSlider = document.getElementById("contrast");
+const sepiaSlider = document.getElementById("sepia");
+const saturateSlider = document.getElementById("saturate");
+const hueRotateSlider = document.getElementById("hue-rotate");
+const grayscaleSlider = document.getElementById("grayscale");
+const brightnessSlider = document.getElementById("brightness");
+const opacitySlider = document.getElementById("opacity");
+
+function updateFilters() {
+    const invertValue = invertSlider.value;
+    const blurValue = blurSlider.value;
+    const contrastValue = contrastSlider.value;
+    const sepiaValue = sepiaSlider.value;
+    const saturateValue = saturateSlider.value;
+    const hueRotateValue = hueRotateSlider.value;
+    const grayscaleValue = grayscaleSlider.value;
+    const brightnessValue = brightnessSlider.value;
+    const opacityValue = opacitySlider.max - opacitySlider.value;
+
+    document.documentElement.style.filter = `invert(${invertValue}%)
+                                             blur(${blurValue}px) 
+                                             contrast(${contrastValue}%) 
+                                             sepia(${sepiaValue}%) 
+                                             saturate(${saturateValue}%) 
+                                             hue-rotate(${hueRotateValue}deg) 
+                                             grayscale(${grayscaleValue}%)
+                                             brightness(${brightnessValue}%) 
+                                             opacity(${opacityValue}%)`;
+
 }
 
-function positive() {
-    document.documentElement.style.filter = "invert(0)";
-    document.querySelector(".negative-button").style.display = "block";
-    document.querySelector(".positive-button").style.display = "none";
-}
+ 
 
-function applyBlur() {
-    document.documentElement.style.filter = "blur(5px)";
-    document.querySelector(".blur-button").style.display = "none";
-    document.querySelector(".unblur-button").style.display = "block";
-}
 
-function unblur() {
-    document.documentElement.style.filter = "blur(0px)";
-    document.querySelector(".blur-button").style.display = "block";
-    document.querySelector(".unblur-button").style.display = "none";
+updateFilters();
+
+invertSlider.addEventListener("input", updateFilters);
+blurSlider.addEventListener("input", updateFilters);
+contrastSlider.addEventListener("input", updateFilters);
+sepiaSlider.addEventListener("input", updateFilters);
+saturateSlider.addEventListener("input", updateFilters);
+hueRotateSlider.addEventListener("input", updateFilters);
+grayscaleSlider.addEventListener("input", updateFilters);
+brightnessSlider.addEventListener("input", updateFilters);
+opacitySlider.addEventListener("input", updateFilters);
+
+function resetFilters() {
+
+    invertSlider.value = 0;
+    blurSlider.value = 0;
+    contrastSlider.value = 100;
+    sepiaSlider.value = 0;
+    saturateSlider.value = 100;
+    hueRotateSlider.value = 0;
+    grayscaleSlider.value = 0;
+    brightnessSlider.value = 100;
+    opacitySlider.value = 0;
+
+    updateFilters();
+
 }
 
 // Calculator
 
-const display = document.getElementById("display");
+const display = document.querySelector('.display');
 
 function appendToDisplay(input) {
 
@@ -694,4 +734,36 @@ function update() {
     milliseconds = String(milliseconds).padStart(2, "0");
 
     stopwatchDisplay.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+}
+
+// Random Cat 
+
+const catImage = document.getElementById("cat-image");
+const breed = document.getElementById("cat-breed");
+const temperament = document.getElementById("cat-temp");
+const origin = document.getElementById("cat-origin");
+const description = document.getElementById("cat-desc");
+
+async function fetchCat() {
+
+    const response = await fetch("https://api.thecatapi.com/v1/images/search?has_breeds=1", {
+
+        headers: {
+
+            "x-api-key": "live_6Mp412toxS5v7xzRCLGvcaM43uQLOkR6UgAgySH93sqwmBpxLW9kdm0UsJgunvX6"
+
+        }
+        
+    });
+
+    const data = await response.json();
+
+    const cat = data[0];
+    catImage.style.display = "block";
+    catImage.src = data[0].url;
+    breed.textContent = `Breed: ${cat.breeds[0].name}`;
+    temperament.textContent = `Temperament: ${cat.breeds[0].temperament}`;
+    origin.textContent = `Origin: ${cat.breeds[0].origin}`;
+    description.textContent = `Description: ${cat.breeds[0].description}`;
+
 }

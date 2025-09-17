@@ -8,15 +8,16 @@ Finished
 
 > - Currency Converter
 > - Calculator
+> - Random Cat
+> - Times Table Helper
+> - Weather App
 
 Working on
 ----------
 
 > - Pokémon Randomizer
-> - Times Table Helper
 > - Fatebringer
 > - Filters
-> - Weather App
 > - Stopwatch
 
 Planned
@@ -33,6 +34,9 @@ Planned
 > - Tamagotchi
 > - Mood Light
 > - Noise Generator
+> - Snake
+> - My Other Projects
+> - Secrets and Puzzles
 
 Planned Upgrades
 ----------------
@@ -40,3 +44,4 @@ Planned Upgrades
 > - Currency Converter
 
   1. Fix styling for currency select dropdown
+  2. Improve styling for weather app

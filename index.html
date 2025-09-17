@@ -16,8 +16,8 @@
     <div class="header">
         <h1 class="title">Widgets <span class="revamped">Revamped</span></h1>
         <p class="blurb">This is a little <span class="word-colour">website</span> that throws together a bunch 
-                         of silly little <span class="word-colour">widgets</span> of varying practicality and 
-                         applicability. Just to help me <span class="word-colour">learn</span>. Have fun playing around with them.
+                        of silly little <span class="word-colour">widgets</span> of varying practicality and 
+                        applicability. Just to help me <span class="word-colour">learn</span>. Have fun playing around with them.
         </p>
     </div>
 
@@ -132,11 +132,11 @@
         </div>
 
         <!-- Fatebringer -->
-      
+    
         <div class="widget" id="decider">
             <h3>Fatebringer</h3>
             <p>Can't decide on something? We will choose for you.
-               Just add the options and click the button for the decision.
+            Just add the options and click the button for the decision.
             </p>
             <div class="fatebringer-input-container">
                 <input type="text" id="option" name="option">
@@ -172,17 +172,46 @@
 
         <div class="widget" id="filters">
             <h3>Filters</h3>
-            <button class="negative-button" onclick="negative()">
-                <span class="button-span">-</span>
-            </button>
-            <button class="positive-button" onclick="positive()" style="display: none">
-                <span class="button-span">+</span>
-            </button>
-            <button class="blur-button" onclick="applyBlur()">
-                <span class="button-span">Blur</span>
-            </button>
-            <button class="unblur-button" onclick="unblur()" style="display: none">
-                <span class="button-span">Unblur</span>
+            <div class="filters-container">
+                <div class="filter-container">
+                    <label class="filter-label" for="invert">Invert Colour</label>
+                    <input type="range" id="invert" min="0" max="100" value="0">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="blur">Blur</label>
+                    <input type="range" id="blur" min="0" max="30" value="0">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="contrast">Contrast</label>
+                    <input type="range" id="contrast" min="100" max="200" value="100">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="sepia">Sepia</label>
+                    <input type="range" id="sepia" min="0" max="100" value="0">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="saturate">Saturate</label>
+                    <input type="range" id="saturate" min="100" max="1000" value="100">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="hue-rotate">Hue Rotate</label>
+                    <input type="range" id="hue-rotate" min="0" max="360" value="0">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="grayscale">Grayscale</label>
+                    <input type="range" id="grayscale" min="0" max="100" value="0">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="brightness">Brightness</label>
+                    <input type="range" id="brightness" min="100" max="200" value="100">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="opacity">Opacity</label>
+                    <input type="range" id="opacity" min="0" max="100" value="0">
+                </div>
+            </div>
+            <button id="reset-filters" onclick="resetFilters()">
+                    <span class="button-span">Reset Filters</span> 
             </button>
         </div>
 
@@ -302,9 +331,26 @@
             </div>
         </div>
 
+        <!-- Random Cat -->
+
+        <div class="widget" id="random-cat">
+            <h3>Random Cat</h3>
+            <div id="cat-container">
+                <img id="cat-image" src="" alt="Random Cat" style="display: none;">
+                <p id="cat-breed"></p>
+                <p id="cat-temp"></p>
+                <p id="cat-origin"></p>
+                <p id="cat-desc"></p>
+            </div>
+            <button id="cat-button" onclick="fetchCat()">
+                <span class="button-span">New Cat</span>
+            </button>
+        </div>
+
         <div class="widget" id="coin-flipper">Coin Flipper</div>
 
-    </div>
+    </div>  
+
     <script type="importmap">
         {
         "imports": {
