@@ -595,6 +595,18 @@ function positive() {
     document.querySelector(".positive-button").style.display = "none";
 }
 
+function applyBlur() {
+    document.documentElement.style.filter = "blur(5px)";
+    document.querySelector(".blur-button").style.display = "none";
+    document.querySelector(".unblur-button").style.display = "block";
+}
+
+function unblur() {
+    document.documentElement.style.filter = "blur(0px)";
+    document.querySelector(".blur-button").style.display = "block";
+    document.querySelector(".unblur-button").style.display = "none";
+}
+
 // Calculator
 
 const display = document.getElementById("display");
