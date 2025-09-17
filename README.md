@@ -17,6 +17,7 @@ Working on
 > - Fatebringer
 > - Filters
 > - Weather App
+> - Stopwatch
 
 Planned
 -------
@@ -27,7 +28,6 @@ Planned
 > - World Clock / Time Zone Converter
 > - Password Generator
 > - Countdown Timer
-> - Stopwatch
 > - Dice Roller
 > - Colour Generator
 > - Tamagotchi

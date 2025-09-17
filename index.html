@@ -185,7 +185,7 @@
         <div class="widget" id="calculator-container">
             <h3>Calculator</h3>
                 <div id="calculator">
-                <input id="display" readonly>
+                <input class="display" readonly>
                 <div id="keys">
                     <div class="spacer">
                         <button class="calc-button operator-btn" onclick="appendToDisplay('+')">
@@ -273,6 +273,26 @@
                         </button>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Stopwatch -->
+
+        <div class="widget" id="stopwatch">
+            <h3>Stopwatch</h3>
+            <div id="display">
+                00:00:00:00
+            </div>
+            <div id="controls">
+                <button id="start-button" onclick="start()">
+                    <span class="button-span">Start</span>
+                </button>
+                <button id="stop-button" onclick="stop()">
+                    <span class="button-span">Stop</span>
+                </button>
+                <button id="reset-button" onclick="reset()">
+                    <span class="button-span">Reset</span>
+                </button>
             </div>
         </div>
 

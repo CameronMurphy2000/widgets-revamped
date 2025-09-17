@@ -326,3 +326,8 @@ select.decorated option:hover {
 .calc-button {
     font-family: 'Roboto Mono', monospace;
 }
+
+#display {
+    font-size: 2rem;
+    padding: 1rem;
+}
