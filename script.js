@@ -746,26 +746,44 @@ const description = document.getElementById("cat-desc");
 
 async function fetchCat() {
 
-    const response = await fetch("https://api.thecatapi.com/v1/images/search?has_breeds=1", {
+    const container = document.getElementById("cat-container");
 
-        headers: {
+    catImage.classList.add("spinner");
 
-            "x-api-key": "live_6Mp412toxS5v7xzRCLGvcaM43uQLOkR6UgAgySH93sqwmBpxLW9kdm0UsJgunvX6"
+    try {
+        const response = await fetch("https://api.thecatapi.com/v1/images/search?has_breeds=1", {
 
-        }
-        
-    });
+            headers: {
 
-    const data = await response.json();
+                "x-api-key": "live_6Mp412toxS5v7xzRCLGvcaM43uQLOkR6UgAgySH93sqwmBpxLW9kdm0UsJgunvX6"
 
-    const cat = data[0];
-    catImage.style.display = "block";
-    catImage.src = data[0].url;
-    breed.textContent = `Breed: ${cat.breeds[0].name}`;
-    temperament.textContent = `Temperament: ${cat.breeds[0].temperament}`;
-    origin.textContent = `Origin: ${cat.breeds[0].origin}`;
-    description.textContent = `Description: ${cat.breeds[0].description}`;
+            }    
+        });
 
+        const data = await response.json();
+        const cat = data[0];
+
+        catImage.onload = () => {
+
+            catImage.classList.remove("spinner");      
+            catImage.style.display = "block";
+            
+            breed.textContent = `Breed: ${cat.breeds[0].name}`;
+            temperament.textContent = `Temperament: ${cat.breeds[0].temperament}`;
+            origin.textContent = `Origin: ${cat.breeds[0].origin}`;
+            description.textContent = `Description: ${cat.breeds[0].description}`;
+
+        };
+
+        catImage.src = cat.url;
+
+    } catch (err) {
+
+        spinner.remove();
+        console.error(err);
+        alert("Failed to fetch cat image. Please try again.");
+
+    }
 }
 
 // Lightswitch
@@ -829,3 +847,46 @@ function lightsOn() {
 
 offSwitch.addEventListener('click', lightsOff);
 onSwitch.addEventListener('click', lightsOn);
+
+// Custom Cursors
+
+function setCursor(cursorType) {
+
+    const styleEl = document.getElementById('custom-cursor-style') || (() => {
+
+        const el = document.createElement('style');
+        el.id = 'custom-cursor-style';
+        document.head.appendChild(el);
+
+        return el;
+
+    })();
+
+    switch(cursorType) {
+
+        case 'cursor-1':
+
+            styleEl.innerHTML = ` * { cursor: url('./Diamond Sword Cursor.png') 0 0, auto !important; } `;
+            break;
+
+        case 'cursor-2':
+
+            styleEl.innerHTML = ` * { cursor: url('./Cat.png') 0 0, auto !important; } `;
+            break;
+
+        case 'cursor-3':
+
+            styleEl.innerHTML = ` * { cursor: url('./Pokeball.png') 0 0, auto !important; } `;
+            break;
+        
+        case 'default':
+
+            styleEl.innerHTML = ``;
+            break;
+
+    }
+
+    console.log(cursorType);
+    console.log(styleEl.innerHTML);
+    console.log("Cursor changed");
+}

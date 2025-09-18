@@ -165,7 +165,7 @@
                 </button>
             </form>
 
-            <div class="card" style="display: none">
+            <div class="card display-none">
             </div>
         </div>
 
@@ -357,18 +357,33 @@
             <img id="on-switch" src="./light-switch-off-svgrepo-com.svg" class="lightswitch-img always-on" style="display: none" id="ls-on">
         </div>
 
-        <div class="widget" id="coin-flipper">Coin Flipper</div>
+        <!-- Custom Cursors -->
 
-    </div>  
-
-    <script type="importmap">
-        {
-        "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
-            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
-        }
-        }
-    </script>
+        <div class="widget" id="custom-cursors">
+            <h3>Custom Cursors</h3>
+            <div class="cursor-container">
+                <button id="cursor1" class="cursor-button" onclick="setCursor('cursor-1')">
+                    <span class="button-span cursor-span">
+                        <img src="./Diamond Sword Cursor.png" alt="Diamond Sword Cursor" class="cursor-img">
+                    </span>
+                </button>
+                <button id="cursor2" class="cursor-button" onclick="setCursor('cursor-2')">
+                    <span class="button-span cursor-span">
+                        <img src="./Cat.png" alt="Cat Cursor" class="cursor-img">
+                    </span>
+                </button>
+                <button id="cursor3" class="cursor-button" onclick="setCursor('cursor-3')">
+                    <span class="button-span cursor-span">
+                        <img src="./Pokeball.png" alt="Pokeball Cursor" class="cursor-img">
+                    </span>
+                </button>
+            </div>
+            <button id="reset-cursor" class="cursor-button" onclick="setCursor('default')">
+                    <span class="button-span cursor-span">Reset</span>
+            </button>
+        </div>
+    </div> 
+    
     <script src="script.js"></script>
     <script type="module" src="cube.js"></script>
 </body>

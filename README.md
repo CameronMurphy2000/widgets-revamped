@@ -20,6 +20,7 @@ Working on
 > - Filters
 > - Stopwatch
 > - Lightswitch
+> - Custom Cursors
 
 Planned
 -------
@@ -38,7 +39,7 @@ Planned
 > - Snake
 > - My Other Projects
 > - Secrets and Puzzles
-> - Change Mouse Style
+> - Rock Paper Scissors
 
 Planned Upgrades
 ----------------
