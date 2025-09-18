@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="always-on">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +11,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body class="always-on" id="body">
 
     <div class="header">
         <h1 class="title">Widgets <span class="revamped">Revamped</span></h1>
         <p class="blurb">This is a little <span class="word-colour">website</span> that throws together a bunch 
-                         of silly little <span class="word-colour">widgets</span> of varying practicality and 
-                         applicability. Just to help me <span class="word-colour">learn</span>. Have fun playing around with them.
+                        of silly little <span class="word-colour">widgets</span> of varying practicality and 
+                        applicability. Just to help me <span class="word-colour">learn</span>. Have fun playing around with them.
         </p>
     </div>
 
-    <!-- Currency Converter -->
+    <div class="grid always-on">
 
-    <div class="grid">
+        <!-- Currency Converter -->
+            
         <div class="widget" id="currency">
             <h3>Currency Converter</h3>
             <a class="currency-link" href="https://en.wikipedia.org/wiki/ISO_4217#Active_codes_(list_one)" target="_blank"><span class="word-colour">?</span></a>
@@ -132,11 +133,11 @@
         </div>
 
         <!-- Fatebringer -->
-      
+    
         <div class="widget" id="decider">
             <h3>Fatebringer</h3>
             <p>Can't decide on something? We will choose for you.
-               Just add the options and click the button for the decision.
+            Just add the options and click the button for the decision.
             </p>
             <div class="fatebringer-input-container">
                 <input type="text" id="option" name="option">
@@ -172,11 +173,46 @@
 
         <div class="widget" id="filters">
             <h3>Filters</h3>
-            <button class="negative-button" onclick="negative()">
-                <span class="button-span">-</span>
-            </button>
-            <button class="positive-button" onclick="positive()" style="display: none">
-                <span class="button-span">+</span>
+            <div class="filters-container">
+                <div class="filter-container">
+                    <label class="filter-label" for="invert">Invert Colour</label>
+                    <input type="range" id="invert" min="0" max="100" value="0">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="blur">Blur</label>
+                    <input type="range" id="blur" min="0" max="30" value="0">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="contrast">Contrast</label>
+                    <input type="range" id="contrast" min="100" max="200" value="100">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="sepia">Sepia</label>
+                    <input type="range" id="sepia" min="0" max="100" value="0">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="saturate">Saturate</label>
+                    <input type="range" id="saturate" min="100" max="1000" value="100">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="hue-rotate">Hue Rotate</label>
+                    <input type="range" id="hue-rotate" min="0" max="360" value="0">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="grayscale">Grayscale</label>
+                    <input type="range" id="grayscale" min="0" max="100" value="0">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="brightness">Brightness</label>
+                    <input type="range" id="brightness" min="100" max="200" value="100">
+                </div>
+                <div class="filter-container">
+                    <label class="filter-label" for="opacity">Opacity</label>
+                    <input type="range" id="opacity" min="0" max="100" value="0">
+                </div>
+            </div>
+            <button id="reset-filters" onclick="resetFilters()">
+                    <span class="button-span">Reset Filters</span> 
             </button>
         </div>
 
@@ -185,7 +221,7 @@
         <div class="widget" id="calculator-container">
             <h3>Calculator</h3>
                 <div id="calculator">
-                <input id="display" readonly>
+                <input class="display" readonly>
                 <div id="keys">
                     <div class="spacer">
                         <button class="calc-button operator-btn" onclick="appendToDisplay('+')">
@@ -276,9 +312,55 @@
             </div>
         </div>
 
+        <!-- Stopwatch -->
+
+        <div class="widget" id="stopwatch">
+            <h3>Stopwatch</h3>
+            <div id="display">
+                00:00:00:00
+            </div>
+            <div id="controls">
+                <button id="start-button" onclick="start()">
+                    <span class="button-span">Start</span>
+                </button>
+                <button id="stop-button" onclick="stop()">
+                    <span class="button-span">Stop</span>
+                </button>
+                <button id="reset-button" onclick="reset()">
+                    <span class="button-span">Reset</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Random Cat -->
+
+        <div class="widget" id="random-cat">
+            <h3>Random Cat</h3>
+            <div id="cat-container">
+                <img id="cat-image" src="" alt="Random Cat" style="display: none;">
+                <p id="cat-breed"></p>
+                <p id="cat-temp"></p>
+                <p id="cat-origin"></p>
+                <p id="cat-desc"></p>
+            </div>
+            <button id="cat-button" onclick="fetchCat()">
+                <span class="button-span">New Cat</span>
+            </button>
+        </div>
+
+        <!-- Lightswitch -->
+
+        <div class="widget always-on" id="lightswitch">
+            <h3>Light Switch</h3>
+            <p>Do you want to turn off the lights?</p>
+            <img id="off-switch" src="./light-switch-on-svgrepo-com.svg" class="lightswitch-img">
+            <img id="on-switch" src="./light-switch-off-svgrepo-com.svg" class="lightswitch-img always-on" style="display: none" id="ls-on">
+        </div>
+
         <div class="widget" id="coin-flipper">Coin Flipper</div>
 
-    </div>
+    </div>  
+
     <script type="importmap">
         {
         "imports": {

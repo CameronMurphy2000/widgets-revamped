@@ -583,21 +583,73 @@ function displayError(message) {
 
 // Filters
 
-function negative() {
-    document.documentElement.style.filter = "invert(1)";
-    document.querySelector(".negative-button").style.display = "none";
-    document.querySelector(".positive-button").style.display = "block";
+const invertSlider = document.getElementById("invert");
+const blurSlider = document.getElementById("blur");
+const contrastSlider = document.getElementById("contrast");
+const sepiaSlider = document.getElementById("sepia");
+const saturateSlider = document.getElementById("saturate");
+const hueRotateSlider = document.getElementById("hue-rotate");
+const grayscaleSlider = document.getElementById("grayscale");
+const brightnessSlider = document.getElementById("brightness");
+const opacitySlider = document.getElementById("opacity");
+
+function updateFilters() {
+    const invertValue = invertSlider.value;
+    const blurValue = blurSlider.value;
+    const contrastValue = contrastSlider.value;
+    const sepiaValue = sepiaSlider.value;
+    const saturateValue = saturateSlider.value;
+    const hueRotateValue = hueRotateSlider.value;
+    const grayscaleValue = grayscaleSlider.value;
+    const brightnessValue = brightnessSlider.value;
+    const opacityValue = opacitySlider.max - opacitySlider.value;
+
+    document.documentElement.style.filter = `invert(${invertValue}%)
+                                             blur(${blurValue}px) 
+                                             contrast(${contrastValue}%) 
+                                             sepia(${sepiaValue}%) 
+                                             saturate(${saturateValue}%) 
+                                             hue-rotate(${hueRotateValue}deg) 
+                                             grayscale(${grayscaleValue}%)
+                                             brightness(${brightnessValue}%) 
+                                             opacity(${opacityValue}%)`;
+
 }
 
-function positive() {
-    document.documentElement.style.filter = "invert(0)";
-    document.querySelector(".negative-button").style.display = "block";
-    document.querySelector(".positive-button").style.display = "none";
+ 
+
+
+updateFilters();
+
+invertSlider.addEventListener("input", updateFilters);
+blurSlider.addEventListener("input", updateFilters);
+contrastSlider.addEventListener("input", updateFilters);
+sepiaSlider.addEventListener("input", updateFilters);
+saturateSlider.addEventListener("input", updateFilters);
+hueRotateSlider.addEventListener("input", updateFilters);
+grayscaleSlider.addEventListener("input", updateFilters);
+brightnessSlider.addEventListener("input", updateFilters);
+opacitySlider.addEventListener("input", updateFilters);
+
+function resetFilters() {
+
+    invertSlider.value = 0;
+    blurSlider.value = 0;
+    contrastSlider.value = 100;
+    sepiaSlider.value = 0;
+    saturateSlider.value = 100;
+    hueRotateSlider.value = 0;
+    grayscaleSlider.value = 0;
+    brightnessSlider.value = 100;
+    opacitySlider.value = 0;
+
+    updateFilters();
+
 }
 
 // Calculator
 
-const display = document.getElementById("display");
+const display = document.querySelector('.display');
 
 function appendToDisplay(input) {
 
@@ -624,3 +676,151 @@ function calculate() {
         
     }
 }
+
+// Stopwatch
+
+const stopwatchDisplay = document.getElementById("display");
+let timer = null;
+let startTime = 0;
+let elapsedTime = 0;
+let isRunning = false;
+
+function start() {
+
+    if(!isRunning) {
+
+        startTime = Date.now() - elapsedTime;
+        timer = setInterval(update, 10);
+        isRunning = true;
+        console.log(elapsedTime);
+    }
+}
+
+function stop() {
+
+    if(isRunning) {
+
+        clearInterval(timer);
+        elapsedTime = Date.now() - startTime;
+        isRunning = false;
+
+    }
+
+}
+
+function reset() {
+
+    clearInterval(timer);
+    startTime = 0;
+    elapsedTime = 0;
+    isRunning = false;
+    stopwatchDisplay.textContent = "00:00:00:00";
+    
+}
+
+function update() {
+    console.log("update running");
+    const currentTime = Date.now();
+    elapsedTime = currentTime - startTime;
+
+    let hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+    let minutes = Math.floor(elapsedTime / (1000 * 60) % 60);
+    let seconds = Math.floor(elapsedTime / 1000 % 60);
+    let milliseconds = Math.floor(elapsedTime % 1000 / 10);
+
+    hours = String(hours).padStart(2, "0");
+    minutes = String(minutes).padStart(2, "0");
+    seconds = String(seconds).padStart(2, "0");
+    milliseconds = String(milliseconds).padStart(2, "0");
+
+    stopwatchDisplay.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+}
+
+// Random Cat 
+
+const catImage = document.getElementById("cat-image");
+const breed = document.getElementById("cat-breed");
+const temperament = document.getElementById("cat-temp");
+const origin = document.getElementById("cat-origin");
+const description = document.getElementById("cat-desc");
+
+async function fetchCat() {
+
+    const response = await fetch("https://api.thecatapi.com/v1/images/search?has_breeds=1", {
+
+        headers: {
+
+            "x-api-key": "live_6Mp412toxS5v7xzRCLGvcaM43uQLOkR6UgAgySH93sqwmBpxLW9kdm0UsJgunvX6"
+
+        }
+        
+    });
+
+    const data = await response.json();
+
+    const cat = data[0];
+    catImage.style.display = "block";
+    catImage.src = data[0].url;
+    breed.textContent = `Breed: ${cat.breeds[0].name}`;
+    temperament.textContent = `Temperament: ${cat.breeds[0].temperament}`;
+    origin.textContent = `Origin: ${cat.breeds[0].origin}`;
+    description.textContent = `Description: ${cat.breeds[0].description}`;
+
+}
+
+// Lightswitch
+
+const onSwitch = document.getElementById("on-switch");
+const offSwitch = document.getElementById("off-switch");
+const body = document.getElementById("body");
+const lightswitch = document.getElementById("lightswitch");
+
+function lightsOff() {
+
+    const elements = document.querySelectorAll('*:not(.always-on)');
+
+    elements.forEach(el => {
+
+        el.style.display = "none";
+
+    })
+
+    body.style.background = "black";
+
+    lightswitch.style.position = "absolute";
+    lightswitch.style.top = "50%";
+    lightswitch.style.right = "50%";
+    lightswitch.style.transform = "translate(50%, -50%)";
+    lightswitch.style.height = "25vh";
+    lightswitch.style.width = "25vw";
+    lightswitch.style.border = "none";
+    lightswitch.style.background = "black";
+
+    onSwitch.style.filter = "drop-shadow(0 0 30px #f9feba)"
+
+    onSwitch.style.display = "block";
+    offSwitch.style.display = "none";
+
+    resetFilters();
+    
+}
+
+function lightsOn() {
+
+    const elements = document.querySelectorAll('*:not(.always-on');
+
+    elements.forEach(el => {
+
+        el.style.display = "";
+
+    });
+
+    body.style.background = "";
+    lightswitch.style = "";
+
+    onSwitch.style.display = "none";
+    offSwitch.style.display = "block";
+}
+
+offSwitch.addEventListener('click', lightsOff);
+onSwitch.addEventListener('click', lightsOn);
