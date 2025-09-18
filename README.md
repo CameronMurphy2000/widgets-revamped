@@ -38,6 +38,7 @@ Planned
 > - Snake
 > - My Other Projects
 > - Secrets and Puzzles
+> - Change Mouse Style
 
 Planned Upgrades
 ----------------
