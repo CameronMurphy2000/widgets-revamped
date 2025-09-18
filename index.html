@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="always-on">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body class="always-on" id="body">
 
     <div class="header">
         <h1 class="title">Widgets <span class="revamped">Revamped</span></h1>
@@ -21,9 +21,10 @@
         </p>
     </div>
 
-    <!-- Currency Converter -->
+    <div class="grid always-on">
 
-    <div class="grid">
+        <!-- Currency Converter -->
+            
         <div class="widget" id="currency">
             <h3>Currency Converter</h3>
             <a class="currency-link" href="https://en.wikipedia.org/wiki/ISO_4217#Active_codes_(list_one)" target="_blank"><span class="word-colour">?</span></a>
@@ -345,6 +346,15 @@
             <button id="cat-button" onclick="fetchCat()">
                 <span class="button-span">New Cat</span>
             </button>
+        </div>
+
+        <!-- Lightswitch -->
+
+        <div class="widget always-on" id="lightswitch">
+            <h3>Light Switch</h3>
+            <p>Do you want to turn off the lights?</p>
+            <img id="off-switch" src="./light-switch-on-svgrepo-com.svg" class="lightswitch-img">
+            <img id="on-switch" src="./light-switch-off-svgrepo-com.svg" class="lightswitch-img always-on" style="display: none" id="ls-on">
         </div>
 
         <div class="widget" id="coin-flipper">Coin Flipper</div>

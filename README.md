@@ -19,6 +19,7 @@ Working on
 > - Fatebringer
 > - Filters
 > - Stopwatch
+> - Lightswitch
 
 Planned
 -------

@@ -767,3 +767,60 @@ async function fetchCat() {
     description.textContent = `Description: ${cat.breeds[0].description}`;
 
 }
+
+// Lightswitch
+
+const onSwitch = document.getElementById("on-switch");
+const offSwitch = document.getElementById("off-switch");
+const body = document.getElementById("body");
+const lightswitch = document.getElementById("lightswitch");
+
+function lightsOff() {
+
+    const elements = document.querySelectorAll('*:not(.always-on)');
+
+    elements.forEach(el => {
+
+        el.style.display = "none";
+
+    })
+
+    body.style.background = "black";
+
+    lightswitch.style.position = "absolute";
+    lightswitch.style.top = "50%";
+    lightswitch.style.right = "50%";
+    lightswitch.style.transform = "translate(50%, -50%)";
+    lightswitch.style.height = "25vh";
+    lightswitch.style.width = "25vw";
+    lightswitch.style.border = "none";
+    lightswitch.style.background = "black";
+
+    onSwitch.style.filter = "drop-shadow(0 0 30px #f9feba)"
+
+    onSwitch.style.display = "block";
+    offSwitch.style.display = "none";
+
+    resetFilters();
+    
+}
+
+function lightsOn() {
+
+    const elements = document.querySelectorAll('*:not(.always-on');
+
+    elements.forEach(el => {
+
+        el.style.display = "";
+
+    });
+
+    body.style.background = "";
+    lightswitch.style = "";
+
+    onSwitch.style.display = "none";
+    offSwitch.style.display = "block";
+}
+
+offSwitch.addEventListener('click', lightsOff);
+onSwitch.addEventListener('click', lightsOn);

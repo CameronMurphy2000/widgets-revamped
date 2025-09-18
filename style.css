@@ -365,3 +365,12 @@ select.decorated option:hover {
 #cat-container p {
     font-size: 1.2rem;
 }
+
+.lightswitch-img {
+    max-width: 100%;
+    cursor: pointer;
+}
+
+#ls-on {
+    filter: drop-shadow(0 0 10px yellow);
+}
