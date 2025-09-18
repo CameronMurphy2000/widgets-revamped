@@ -781,6 +781,10 @@ function lightsOff() {
 
     elements.forEach(el => {
 
+        if (!el.dataset.prevDisplay) {
+            el.dataset.prevDisplay = el.style.display || "";
+        }
+
         el.style.display = "none";
 
     })
@@ -807,11 +811,12 @@ function lightsOff() {
 
 function lightsOn() {
 
-    const elements = document.querySelectorAll('*:not(.always-on');
+    const elements = document.querySelectorAll('*:not(.always-on)');
 
     elements.forEach(el => {
 
-        el.style.display = "";
+        el.style.display = el.dataset.prevDisplay || "";
+        delete el.dataset.prevDisplay;
 
     });
 

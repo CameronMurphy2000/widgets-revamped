@@ -374,3 +374,7 @@ select.decorated option:hover {
 #ls-on {
     filter: drop-shadow(0 0 10px yellow);
 }
+
+.display-none {
+    display: none;
+}

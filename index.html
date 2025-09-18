@@ -122,7 +122,7 @@
                     <span class="button-span">Generate Question</span>
                 </button>
             </form>
-            <div class="question-section" id="question-section" style="display: none">
+            <div class="question-section display-none" id="question-section">
                 <p id="question"></p>
                 <input type="number" id="answer" placeholder="Your Answer">
                 <button id="checkAnswerButton">
@@ -145,7 +145,7 @@
                     <span class="button-span">+</span>
                 </button>
             </div>
-            <div class="option-section" id="option-section" style="display: none">
+            <div class="option-section display-none" id="option-section">
                 <ul id="option-list"></ul>
                 <button id="choose-option">
                     <span class="button-span" onClick="decideFate()">Choose</span>
@@ -337,7 +337,7 @@
         <div class="widget" id="random-cat">
             <h3>Random Cat</h3>
             <div id="cat-container">
-                <img id="cat-image" src="" alt="Random Cat" style="display: none;">
+                <img class="display-none" id="cat-image" src="" alt="Random Cat">
                 <p id="cat-breed"></p>
                 <p id="cat-temp"></p>
                 <p id="cat-origin"></p>
