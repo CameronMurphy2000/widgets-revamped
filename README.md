@@ -48,3 +48,8 @@ Planned Upgrades
 
   1. Fix styling for currency select dropdown
   2. Improve styling for weather app
+
+> - Custom Cursor
+
+  1. Auto Scroll Through Cursors
+  2. Random Cursor Button
