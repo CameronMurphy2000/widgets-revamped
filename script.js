@@ -850,6 +850,21 @@ onSwitch.addEventListener('click', lightsOn);
 
 // Custom Cursors
 
+let cursorArray = [
+
+    "Diamond Sword", "Cat", "Pokeball", "Autumn", "WoW", "Sims", "Jinx"
+
+];
+
+function setCursorRand() {
+
+    const randomIndex = Math.floor(Math.random() * cursorArray.length);
+    const randomCursor = cursorArray[randomIndex];
+
+    setCursor(randomCursor);
+
+}
+
 function setCursor(cursorType) {
 
     const styleEl = document.getElementById('custom-cursor-style') || (() => {
@@ -864,19 +879,39 @@ function setCursor(cursorType) {
 
     switch(cursorType) {
 
-        case 'cursor-1':
+        case 'Diamond Sword':
 
             styleEl.innerHTML = ` * { cursor: url('./Diamond Sword Cursor.png') 0 0, auto !important; } `;
             break;
 
-        case 'cursor-2':
+        case 'Cat':
 
             styleEl.innerHTML = ` * { cursor: url('./Cat.png') 0 0, auto !important; } `;
             break;
 
-        case 'cursor-3':
+        case 'Pokeball':
 
             styleEl.innerHTML = ` * { cursor: url('./Pokeball.png') 0 0, auto !important; } `;
+            break;
+
+        case 'Autumn':
+
+            styleEl.innerHTML = ` * { cursor: url('./Autumn.png') 0 0, auto !important; } `;
+            break;
+
+        case 'WoW':
+
+            styleEl.innerHTML = ` * { cursor: url('./WoW.png') 0 0, auto !important; } `;
+            break;
+
+        case 'Sims':
+
+            styleEl.innerHTML = ` * { cursor: url('./Sims.png') 0 0, auto !important; } `;
+            break;
+
+        case 'Jinx':
+
+            styleEl.innerHTML = ` * { cursor: url('./Jinx.png') 0 0, auto !important; } `;
             break;
         
         case 'default':
