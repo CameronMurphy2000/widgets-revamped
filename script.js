@@ -890,3 +890,78 @@ function setCursor(cursorType) {
     console.log(styleEl.innerHTML);
     console.log("Cursor changed");
 }
+
+// Colour Generator
+
+function randomColour() {
+
+    const div = document.querySelector('.colour-circle');
+    div.style.display = "block";
+
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+
+    let colour = `rgb(${red}, ${green}, ${blue})`;
+
+    let hex = rgbToHex(red, green, blue);
+
+    let hsl = rgbToHsl(red, green, blue);
+
+    div.style.background = colour;
+
+    updateColourInfo(hex, colour, hsl);
+};
+
+function updateColourInfo(hex, rgb, hsl) {
+
+    let colourInfoDiv = document.getElementById("colour-info");
+    colourInfoDiv.style.display = "block";
+    colourInfoDiv.innerHTML = `
+    <p>Hex: ${hex}</p>
+    <p>RGB: ${rgb}</p>
+    <p>HSL: ${hsl}</p>
+    `;
+
+};
+
+function rgbToHex(r, g, b) {
+    return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+};
+
+function rgbToHsl(r, g, b) {
+    r /= 255;
+    g /= 255;
+    b /= 255;
+
+    let max = Math.max(r, g, b);
+    let min = Math.min(r, g, b);
+    let delta = max - min;
+
+    let h, s, l;
+
+    if (delta === 0) {
+        h = 0;
+    } else if (max === r) {
+        h = ((g - b) / delta) % 6;
+    } else if (max === g) {
+        h = (b - r) / delta + 2;
+    } else {
+        h= (r - g) / delta + 4;
+    }
+
+    h = Math.round(h * 60);
+
+    if (h < 0) {
+        h += 360;
+    }
+
+    l = (max + min) / 2;
+
+    s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+
+    s = +(s * 100).toFixed(1);
+    l = +(l * 100).toFixed(1);
+
+    return `hsl(${h}, ${s}%, ${l}%)`;
+};

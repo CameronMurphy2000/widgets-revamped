@@ -396,3 +396,12 @@ select.decorated option:hover {
 .cursor-span {
     padding: 0.75rem;
 }
+
+
+.colour-circle {
+    height: 6rem;
+    width: 6rem;
+    background: red;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}

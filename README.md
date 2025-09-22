@@ -21,6 +21,7 @@ Working on
 > - Stopwatch
 > - Lightswitch
 > - Custom Cursors
+> - Colour Generator
 
 Planned
 -------
@@ -32,7 +33,6 @@ Planned
 > - Password Generator
 > - Countdown Timer
 > - Dice Roller
-> - Colour Generator
 > - Tamagotchi
 > - Mood Light
 > - Noise Generator
