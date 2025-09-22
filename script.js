@@ -856,6 +856,21 @@ let cursorArray = [
 
 ];
 
+function cycleCursorImage(cursorArray) {
+
+    let index = 0;
+    const cycleImg = document.getElementById("cycle-cursor");
+
+    cycleImg.src = `./${cursorArray[6]}.png`;
+
+    setInterval(() => {
+        cycleImg.src = `./${cursorArray[index]}.png`;
+        index = (index + 1) % cursorArray.length;
+    }, 1000);
+};
+
+cycleCursorImage(cursorArray);
+
 function setCursorRand() {
 
     const randomIndex = Math.floor(Math.random() * cursorArray.length);
@@ -881,7 +896,7 @@ function setCursor(cursorType) {
 
         case 'Diamond Sword':
 
-            styleEl.innerHTML = ` * { cursor: url('./Diamond Sword Cursor.png') 0 0, auto !important; } `;
+            styleEl.innerHTML = ` * { cursor: url('./Diamond Sword.png') 0 0, auto !important; } `;
             break;
 
         case 'Cat':
