@@ -850,18 +850,45 @@ onSwitch.addEventListener('click', lightsOn);
 
 // Custom Cursors
 
+let cycleInterval = null;
+
 let cursorArray = [
 
-    "Diamond Sword", "Cat", "Pokeball", "Autumn", "WoW", "Sims", "Jinx"
+     "Diamond Sword", "Cat", "Pokeball", "Autumn", "WoW",
+     "Sims", "Jinx", "Pooh", "Butterfly", "Bloodborne"
 
 ];
+
+function cycleCursor() {
+
+    let index = 0;
+
+    const styleEl = document.getElementById('custom-cursor-style') || (() => {
+
+        const el = document.createElement('style');
+        el.id = 'custom-cursor-style';
+        document.head.appendChild(el);
+
+        return el;
+
+    })();
+
+    if (cycleInterval) {
+        clearInterval(cycleInterval);
+    }
+
+    cycleInterval = setInterval(() => {
+        styleEl.innerHTML = ` * { cursor: url('./${cursorArray[index]}.png') 0 0, auto !important; } `;
+        index = (index + 1) % cursorArray.length;
+    }, 1000);
+};
 
 function cycleCursorImage(cursorArray) {
 
     let index = 0;
     const cycleImg = document.getElementById("cycle-cursor");
 
-    cycleImg.src = `./${cursorArray[6]}.png`;
+    cycleImg.src = `./${cursorArray[9]}.png`;
 
     setInterval(() => {
         cycleImg.src = `./${cursorArray[index]}.png`;
@@ -881,6 +908,11 @@ function setCursorRand() {
 }
 
 function setCursor(cursorType) {
+
+    if (cycleInterval) {
+        clearInterval(cycleInterval);
+        cycleInterval = null;
+    }
 
     const styleEl = document.getElementById('custom-cursor-style') || (() => {
 
@@ -928,6 +960,21 @@ function setCursor(cursorType) {
 
             styleEl.innerHTML = ` * { cursor: url('./Jinx.png') 0 0, auto !important; } `;
             break;
+
+        case 'Pooh':
+
+            styleEl.innerHTML = ` * { cursor: url('./Pooh.png') 0 0, auto !important; } `;
+            break;
+
+        case 'Butterfly':
+
+            styleEl.innerHTML = ` * { cursor: url('./Butterfly.png') 0 0, auto !important; } `;
+            break;
+
+        case 'Bloodborne':
+
+            styleEl.innerHTML = ` * { cursor: url('./Bloodborne.png') 0 0, auto !important; } `;
+            break;
         
         case 'default':
 
@@ -936,7 +983,4 @@ function setCursor(cursorType) {
 
     }
 
-    console.log(cursorType);
-    console.log(styleEl.innerHTML);
-    console.log("Cursor changed");
 }
