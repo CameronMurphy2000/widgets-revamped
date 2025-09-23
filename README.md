@@ -11,6 +11,7 @@ Finished
 > - Random Cat
 > - Times Table Helper
 > - Weather App
+> - Custom Cursors
 
 Working on
 ----------
@@ -20,7 +21,7 @@ Working on
 > - Filters
 > - Stopwatch
 > - Lightswitch
-> - Custom Cursors
+> - Click Speed Test
 
 Planned
 -------
@@ -49,7 +50,6 @@ Planned Upgrades
   1. Fix styling for currency select dropdown
   2. Improve styling for weather app
 
-> - Custom Cursor
+> - Custom Cursors
 
-  1. Auto Scroll Through Cursors
-  2. Random Cursor Button
+  1. More Cursors
