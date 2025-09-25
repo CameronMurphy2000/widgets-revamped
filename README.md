@@ -40,6 +40,7 @@ Planned
 > - My Other Projects
 > - Secrets and Puzzles
 > - Rock Paper Scissors
+> - Keypad to enter passcode using calculator style functionality
 
 Planned Upgrades
 ----------------
