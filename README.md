@@ -21,7 +21,11 @@ Working on
 > - Filters
 > - Stopwatch
 > - Lightswitch
+> - Custom Cursors
+> - Colour Generator
 > - Click Speed Test
+> - Secret 1
+> - Passcode
 
 Planned
 -------
@@ -33,7 +37,6 @@ Planned
 > - Password Generator
 > - Countdown Timer
 > - Dice Roller
-> - Colour Generator
 > - Tamagotchi
 > - Mood Light
 > - Noise Generator
@@ -41,7 +44,6 @@ Planned
 > - My Other Projects
 > - Secrets and Puzzles
 > - Rock Paper Scissors
-> - Keypad to enter passcode using calculator style functionality
 
 Planned Upgrades
 ----------------

@@ -1792,7 +1792,7 @@ function startCpmTest() {
     if (timeLeft <= 0) {
       endCpmTest();
     }
-  }, 10);
+
 }
 
 function endCpmTest() {
@@ -1814,4 +1814,187 @@ function resetCpmTest() {
   cpmResult.textContent = "";
   cpmTimer.style.display = "block";
   cpmTimer.textContent = "5.00";
+}
+
+  
+// Colour Generator
+
+function randomColour() {
+
+    const div = document.querySelector('.colour-circle');
+    div.style.display = "block";
+
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+
+    let colour = `rgb(${red}, ${green}, ${blue})`;
+
+    let hex = rgbToHex(red, green, blue);
+
+    let hsl = rgbToHsl(red, green, blue);
+
+    div.style.background = colour;
+
+    updateColourInfo(hex, colour, hsl);
+};
+
+function updateColourInfo(hex, rgb, hsl) {
+
+    let colourInfoDiv = document.getElementById("colour-info");
+    colourInfoDiv.style.display = "block";
+    colourInfoDiv.innerHTML = `
+    <p>Hex: ${hex}</p>
+    <p>RGB: ${rgb}</p>
+    <p>HSL: ${hsl}</p>
+    `;
+
+};
+
+function rgbToHex(r, g, b) {
+    return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+};
+
+function rgbToHsl(r, g, b) {
+    r /= 255;
+    g /= 255;
+    b /= 255;
+
+    let max = Math.max(r, g, b);
+    let min = Math.min(r, g, b);
+    let delta = max - min;
+
+    let h, s, l;
+
+    if (delta === 0) {
+        h = 0;
+    } else if (max === r) {
+        h = ((g - b) / delta) % 6;
+    } else if (max === g) {
+        h = (b - r) / delta + 2;
+    } else {
+        h= (r - g) / delta + 4;
+    }
+
+    h = Math.round(h * 60);
+
+    if (h < 0) {
+        h += 360;
+    }
+
+    l = (max + min) / 2;
+
+    s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+
+    s = +(s * 100).toFixed(1);
+    l = +(l * 100).toFixed(1);
+
+    return `hsl(${h}, ${s}%, ${l}%)`;
+};
+
+// Secret 1
+
+const secret1h3 = document.getElementById('secret-1-h3');
+const chars = ['$', '&', '?', '<', '>', '/', '@', '!', '*', '(', ')', '^', '-', '_', '+'];
+
+let char1 = chars[0];
+let char2 = chars[0];
+let char3 = chars[0];
+let char4 = chars[0];
+let char5 = chars[0];
+let char6 = chars[0];
+let char7 = chars[0];
+let char8 = chars[0];
+
+let i1 = 0;
+let i2 = 0;
+let i3 = 0;
+let i4 = 0;
+let i5 = 0;
+let i6 = 0;
+let i7 = 0;
+let i8 = 0;
+
+let intervalCounter = 0;
+
+function secret1h3content() {
+    setInterval(() => {
+        intervalCounter += 50;
+
+        if (intervalCounter % 550 === 0) {
+            i1 = (i1 + 1) % chars.length;
+            char1 = chars[i1];
+        }
+        if (intervalCounter % 100 === 0) {
+            i2 = (i2 + 1) % chars.length;
+            char2 = chars[i2];
+        }
+        if (intervalCounter % 400 === 0) {
+            i3 = (i3 + 1) % chars.length;
+            char3 = chars[i3];
+        }
+        if (intervalCounter % 250 === 0) {
+            i4 = (i4 + 1) % chars.length;
+            char4 = chars[i4];
+        }
+        if (intervalCounter % 625 === 0) {
+            i5 = (i5 + 1) % chars.length;
+            char5 = chars[i5];
+        }
+        if (intervalCounter % 50 === 0) {
+            i6 = (i6 + 1) % chars.length;
+            char6 = chars[i6];
+        }
+        if (intervalCounter % 333 === 0) {
+            i7 = (i7 + 1) % chars.length;
+            char7 = chars[i7];
+        }
+        if (intervalCounter % 420 === 0) {
+            i8 = (i8 + 1) % chars.length;
+            char8 = chars[i8];
+        }
+
+        secret1h3.innerHTML = `${char1}${char2}${char3}${char4}${char5}${char6}${char7}${char8}`;
+    }, 50);
+}
+
+secret1h3content();
+
+// Illusion
+
+const illusion = document.getElementById("illusion");
+
+window.addEventListener("scroll", () => {
+    let scrollY = window.scrollY;
+  
+    let x = Math.sin(scrollY * 0.05) * 30;
+    let rotate = scrollY * 0.2;
+
+    illusion.style.transform = `translateY(${x}px) rotate(${rotate}deg)`;
+});
+
+
+// Passcode
+
+const passDisplay = document.querySelector('.pass-display');
+
+function appendPasskey(key) {
+    passDisplay.value += key;
+}
+
+function clearPasscode() {
+    passDisplay.value = "";
+}
+
+function passcodeSubmit() {
+    
+    if(passDisplay.value === "1234") {
+        alert("correct")
+    } else {
+        alert("incorrect")
+    }
+
+    passDisplay.value = "";
+=======
+  }, 10);
 }
