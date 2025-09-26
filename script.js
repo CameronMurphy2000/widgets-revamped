@@ -885,10 +885,6 @@ function setCursor(cursorType) {
             break;
 
     }
-
-    console.log(cursorType);
-    console.log(styleEl.innerHTML);
-    console.log("Cursor changed");
 }
 
 // Colour Generator
@@ -965,3 +961,108 @@ function rgbToHsl(r, g, b) {
 
     return `hsl(${h}, ${s}%, ${l}%)`;
 };
+
+// Secret 1
+
+const secret1h3 = document.getElementById('secret-1-h3');
+const chars = ['$', '&', '?', '<', '>', '/', '@', '!', '*', '(', ')', '^', '-', '_', '+'];
+
+let char1 = chars[0];
+let char2 = chars[0];
+let char3 = chars[0];
+let char4 = chars[0];
+let char5 = chars[0];
+let char6 = chars[0];
+let char7 = chars[0];
+let char8 = chars[0];
+
+let i1 = 0;
+let i2 = 0;
+let i3 = 0;
+let i4 = 0;
+let i5 = 0;
+let i6 = 0;
+let i7 = 0;
+let i8 = 0;
+
+let intervalCounter = 0;
+
+function secret1h3content() {
+    setInterval(() => {
+        intervalCounter += 50;
+
+        if (intervalCounter % 550 === 0) {
+            i1 = (i1 + 1) % chars.length;
+            char1 = chars[i1];
+        }
+        if (intervalCounter % 100 === 0) {
+            i2 = (i2 + 1) % chars.length;
+            char2 = chars[i2];
+        }
+        if (intervalCounter % 400 === 0) {
+            i3 = (i3 + 1) % chars.length;
+            char3 = chars[i3];
+        }
+        if (intervalCounter % 250 === 0) {
+            i4 = (i4 + 1) % chars.length;
+            char4 = chars[i4];
+        }
+        if (intervalCounter % 625 === 0) {
+            i5 = (i5 + 1) % chars.length;
+            char5 = chars[i5];
+        }
+        if (intervalCounter % 50 === 0) {
+            i6 = (i6 + 1) % chars.length;
+            char6 = chars[i6];
+        }
+        if (intervalCounter % 333 === 0) {
+            i7 = (i7 + 1) % chars.length;
+            char7 = chars[i7];
+        }
+        if (intervalCounter % 420 === 0) {
+            i8 = (i8 + 1) % chars.length;
+            char8 = chars[i8];
+        }
+
+        secret1h3.innerHTML = `${char1}${char2}${char3}${char4}${char5}${char6}${char7}${char8}`;
+    }, 50);
+}
+
+secret1h3content();
+
+// Illusion
+
+const illusion = document.getElementById("illusion");
+
+window.addEventListener("scroll", () => {
+    let scrollY = window.scrollY;
+  
+    let x = Math.sin(scrollY * 0.05) * 30;
+    let rotate = scrollY * 0.2;
+
+    illusion.style.transform = `translateY(${x}px) rotate(${rotate}deg)`;
+});
+
+
+// Passcode
+
+const passDisplay = document.querySelector('.pass-display');
+
+function appendPasskey(key) {
+    passDisplay.value += key;
+}
+
+function clearPasscode() {
+    passDisplay.value = "";
+}
+
+function passcodeSubmit() {
+    
+    if(passDisplay.value === "1234") {
+        alert("correct")
+    } else {
+        alert("incorrect")
+    }
+
+    passDisplay.value = "";
+}
