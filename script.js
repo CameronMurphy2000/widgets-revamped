@@ -1766,6 +1766,7 @@ const cpmTimer = document.querySelector(".cpm-timer");
 const cpmInput = document.querySelector(".cpm-div");
 const cpmResult = document.querySelector(".cpm-result");
 const cpmStart = document.querySelector(".cpm-start");
+const cpmReset = document.querySelector(".cpm-reset");
 
 let clicks = 0;
 let timeLeft = 0;
@@ -1774,6 +1775,7 @@ let timerInterval = null;
 function startCpmTest() {
   clicks = 0;
   timeLeft = 5;
+  cpmTimer.style.display = "block";
   cpmResult.textContent = "";
   cpmStart.style.display = "none";
   cpmInput.style.display = "block";
@@ -1796,8 +1798,20 @@ function startCpmTest() {
 function endCpmTest() {
   clearInterval(timerInterval);
   cpmInput.style.display = "none";
-  cpmStart.style.display = "block";
+  cpmTimer.style.display = "none";
+  cpmReset.style.display = "block";
 
   const cpm = (clicks / 5).toFixed(2);
-  cpmResult.textContent = `${cpm} clicks per minute`;
+  cpmResult.innerHTML = `
+      <p>${cpm} clicks per second</p>
+      <p>With ${clicks} clicks in 5 seconds</p>
+    `;
+}
+
+function resetCpmTest() {
+  cpmReset.style.display = "none";
+  cpmStart.style.display = "flex";
+  cpmResult.textContent = "";
+  cpmTimer.style.display = "block";
+  cpmTimer.textContent = "5.00";
 }
