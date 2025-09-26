@@ -362,24 +362,83 @@
         <div class="widget" id="custom-cursors">
             <h3>Custom Cursors</h3>
             <div class="cursor-container">
-                <button id="cursor1" class="cursor-button" onclick="setCursor('cursor-1')">
+                <button id="cursor1" class="cursor-button" onclick="setCursor('Diamond Sword')">
                     <span class="button-span cursor-span">
-                        <img src="./Diamond Sword Cursor.png" alt="Diamond Sword Cursor" class="cursor-img">
+                        <img src="./Diamond Sword.png" alt="Diamond Sword Cursor" class="cursor-img">
                     </span>
                 </button>
-                <button id="cursor2" class="cursor-button" onclick="setCursor('cursor-2')">
+                <button id="cursor2" class="cursor-button" onclick="setCursor('Cat')">
                     <span class="button-span cursor-span">
                         <img src="./Cat.png" alt="Cat Cursor" class="cursor-img">
                     </span>
                 </button>
-                <button id="cursor3" class="cursor-button" onclick="setCursor('cursor-3')">
+                <button id="cursor3" class="cursor-button" onclick="setCursor('Pokeball')">
                     <span class="button-span cursor-span">
                         <img src="./Pokeball.png" alt="Pokeball Cursor" class="cursor-img">
                     </span>
                 </button>
-            </div>
-            <button id="reset-cursor" class="cursor-button" onclick="setCursor('default')">
+                <button id="cursor4" class="cursor-button" onclick="setCursor('Autumn')">
+                    <span class="button-span cursor-span">
+                        <img src="./Autumn.png" alt="Autumn Cursor" class="cursor-img">
+                    </span>
+                </button>
+                <button id="cursor5" class="cursor-button" onclick="setCursor('WoW')">
+                    <span class="button-span cursor-span">
+                        <img src="./WoW.png" alt="World of Warcraft Cursor" class="cursor-img">
+                    </span>
+                </button>
+                <button id="cursor6" class="cursor-button" onclick="setCursor('Sims')">
+                    <span class="button-span cursor-span">
+                        <img src="./Sims.png" alt="Sims Cursor" class="cursor-img">
+                    </span>
+                </button>
+                <button id="cursor7" class="cursor-button" onclick="setCursor('Jinx')">
+                    <span class="button-span cursor-span">
+                        <img src="./Jinx.png" alt="Jinx Cursor" class="cursor-img">
+                    </span>
+                </button>
+                <button id="cursor8" class="cursor-button" onclick="setCursor('Pooh')">
+                    <span class="button-span cursor-span">
+                        <img src="./Pooh.png" alt="Pooh Cursor" class="cursor-img">
+                    </span>
+                </button>
+                <button id="cursor9" class="cursor-button" onclick="setCursor('Butterfly')">
+                    <span class="button-span cursor-span">
+                        <img src="./Butterfly.png" alt="Butterfly Cursor" class="cursor-img">
+                    </span>
+                </button>
+                <button id="cursor10" class="cursor-button" onclick="setCursor('Bloodborne')">
+                    <span class="button-span cursor-span">
+                        <img src="./Bloodborne.png" alt="Bloodborne Cursor" class="cursor-img">
+                    </span>
+                </button>
+                <button id="cycle-cursor-button" class="cursor-button" onclick="cycleCursor()">
+                    <span class="button-span cursor-span">
+                        <img id="cycle-cursor" alt="Cycle Cursor" class="cursor-img">                    </span>
+                </button>
+            </div>     
+            <div class="cursor-button-container">   
+                <button id="ransom-cursor" class="cursor-button" onclick="setCursorRand()">
+                    <span class="button-span cursor-span">Random</span>
+                </button>   
+                <button id="reset-cursor" class="cursor-button" onclick="setCursor('default')">
                     <span class="button-span cursor-span">Reset</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- CPM Test -->
+
+        <div class="widget" id="cpm-test">
+            <h3>Click Speed Test</h3>
+            <div class="cpm-container">
+                <div class="cpm-start" onclick="startCpmTest()">Click to Start</div>
+                <div class="cpm-div display-none"></div>
+            </div>
+            <div class="cpm-timer">5.00</div>
+            <div class="cpm-result"></div>
+            <button class="cpm-reset display-none" onclick="resetCpmTest()">
+                <span class="button-span">Reset</span>
             </button>
         </div>
     </div> 
