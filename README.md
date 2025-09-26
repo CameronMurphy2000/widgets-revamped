@@ -11,6 +11,7 @@ Finished
 > - Random Cat
 > - Times Table Helper
 > - Weather App
+> - Custom Cursors
 
 Working on
 ----------
@@ -22,6 +23,9 @@ Working on
 > - Lightswitch
 > - Custom Cursors
 > - Colour Generator
+> - Click Speed Test
+> - Secret 1
+> - Passcode
 
 Planned
 -------
@@ -48,3 +52,7 @@ Planned Upgrades
 
   1. Fix styling for currency select dropdown
   2. Improve styling for weather app
+
+> - Custom Cursors
+
+  1. More Cursors
