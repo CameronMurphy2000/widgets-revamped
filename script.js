@@ -1792,7 +1792,7 @@ function startCpmTest() {
     if (timeLeft <= 0) {
       endCpmTest();
     }
-
+  }, 10);
 }
 
 function endCpmTest() {
@@ -1995,6 +1995,4 @@ function passcodeSubmit() {
     }
 
     passDisplay.value = "";
-=======
-  }, 10);
 }
