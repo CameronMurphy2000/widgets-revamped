@@ -210,6 +210,10 @@ input:focus {
   outline: none;
 }
 
+#feedback {
+  font-size: 1.4rem;
+}
+
 .currency-link {
   position: absolute;
   text-decoration: none;

@@ -44,6 +44,7 @@ Planned
 > - My Other Projects
 > - Secrets and Puzzles
 > - Rock Paper Scissors
+> - Probability Calculator
 
 Planned Upgrades
 ----------------

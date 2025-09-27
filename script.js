@@ -1263,10 +1263,10 @@ document
       const feedbackElement = document.getElementById("feedback");
       if (userAnswer === correctAnswer) {
         feedbackElement.innerText = "Correct!";
-        feedbackElement.style.color = "green";
+        feedbackElement.style.color = "#67d161ff";
       } else {
         feedbackElement.innerText = `Incorrect. The correct answer is ${correctAnswer}.`;
-        feedbackElement.style.color = "red";
+        feedbackElement.style.color = "#d64242ff";
       }
     };
   });
