@@ -1996,3 +1996,34 @@ function passcodeSubmit() {
 
     passDisplay.value = "";
 }
+
+// Mouse Playground
+
+const playground = document.querySelector('.playground');
+
+  playground.addEventListener('click', (e) => {
+    const circle = document.createElement('div');
+    circle.classList.add('circle');
+
+    const rect = playground.getBoundingClientRect();
+    circle.style.left = `${e.clientX - rect.left}px`;
+    circle.style.top = `${e.clientY - rect.top}px`;
+
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+
+    let colour = `rgb(${red}, ${green}, ${blue})`;
+
+    circle.style.background = colour;
+
+    playground.appendChild(circle);
+
+    setTimeout(() => {
+      circle.style.opacity = 0;
+    }, 1500);
+
+    setTimeout(() => {
+      circle.remove();
+    }, 2000);
+});

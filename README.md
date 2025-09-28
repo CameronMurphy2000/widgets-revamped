@@ -26,6 +26,7 @@ Working on
 > - Click Speed Test
 > - Secret 1
 > - Passcode
+> - Mouse Playground
 
 Planned
 -------
