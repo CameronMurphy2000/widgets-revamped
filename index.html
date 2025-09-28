@@ -1,474 +1,662 @@
 <!DOCTYPE html>
 <html lang="en" class="always-on">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Widgets Revamped</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-
-</head>
-<body class="always-on" id="body">
-
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="always-on" id="body">
     <div class="header">
-        <h1 class="title">Widgets <span class="revamped">Revamped</span></h1>
-        <p class="blurb">This is a little <span class="word-colour">website</span> that throws together a bunch 
-                        of silly little <span class="word-colour">widgets</span> of varying practicality and 
-                        applicability. Just to help me <span class="word-colour">learn</span>. Have fun playing around with them.
-        </p>
+      <h1 class="title">Widgets <span class="revamped">Revamped</span></h1>
+      <p class="blurb">
+        This is a little <span class="word-colour">website</span> that throws
+        together a bunch of silly little
+        <span class="word-colour">widgets</span> of varying practicality and
+        applicability. Just to help me <span class="word-colour">learn</span>.
+        Have fun playing around with them.
+      </p>
     </div>
 
     <div class="grid always-on">
+      <!-- Illusion -->
 
-        <!-- Illusion -->
+      <div class="widget illusion-container" id="illusion-container">
+        <div id="illusion" class="illusion">Welcome</div>
+      </div>
 
-        <div class="widget illusion-container" id="illusion-container">
-            <div id="illusion" class="illusion">Welcome</div>
+      <!-- Currency Converter -->
+
+      <div class="widget" id="currency">
+        <h3>Currency Converter</h3>
+        <a
+          class="currency-link"
+          href="https://en.wikipedia.org/wiki/ISO_4217#Active_codes_(list_one)"
+          target="_blank"
+          ><span class="word-colour">?</span></a
+        >
+        <div class="from-currency-container">
+          <label for="from-currency">From:</label>
+          <div class="select-wrapper">
+            <select id="from-currency"></select>
+          </div>
+        </div>
+        <input type="number" min="0" id="amount" placeholder="Amount" />
+
+        <div class="to-currency-container">
+          <label for="to-currency">To:</label>
+          <div class="select-wrapper">
+            <select class="decorated" id="to-currency"></select>
+          </div>
         </div>
 
-        <!-- Currency Converter -->
-            
-        <div class="widget" id="currency">
-            <h3>Currency Converter</h3>
-            <a class="currency-link" href="https://en.wikipedia.org/wiki/ISO_4217#Active_codes_(list_one)" target="_blank"><span class="word-colour">?</span></a>
-            <div class="from-currency-container">
-                <label for="from-currency">From:</label>
-                <div class="select-wrapper">
-                    <select id="from-currency"></select>
-                </div>
-            </div>
-            <input type="number" min="0" id="amount" placeholder="Amount">
-
-            <div class="to-currency-container">
-                <label for="to-currency">To:</label>
-                <div class="select-wrapper">
-                    <select class="decorated" id="to-currency"></select>
-                </div>
-            </div>
-
-            <div class="button-container">
-                <button onclick="convertCurrency()">
-                <span class="button-span">Convert</span>
-                </button>
-            </div>
-            <div id="result"></div>
+        <div class="button-container">
+          <button onclick="convertCurrency()">
+            <span class="button-span">Convert</span>
+          </button>
         </div>
+        <div id="result"></div>
+      </div>
 
-        <!-- Pokémon Randomizer -->
+      <!-- Pokémon Randomizer -->
 
-        <div class="widget" id="poke-random">
-            <h3>Pokémon Randomizer</h3>
-            <div class="checkbox-grid">
-                <div>
-                    <label for="gen1">Gen 1</label>
-                    <input type="checkbox" id="gen1">
-                </div>
-                <div>
-                    <label for="gen2">Gen 2</label>
-                    <input type="checkbox" id="gen2">
-                </div>
-                <div>
-                    <label for="gen3">Gen 3</label>
-                    <input type="checkbox" id="gen3">
-                </div>
-                <div>
-                    <label for="gen4">Gen 4</label>
-                    <input type="checkbox" id="gen4">
-                </div>
-                <div>
-                    <label for="gen5">Gen 5</label>
-                    <input type="checkbox" id="gen5">
-                </div>
-                <div>
-                    <label for="gen6">Gen 6</label>
-                    <input type="checkbox" id="gen6">
-                </div>
-                <div>
-                    <label for="gen7">Gen 7</label>
-                    <input type="checkbox" id="gen7">
-                </div>
-                <div>
-                    <label for="gen8">Gen 8</label>
-                    <input type="checkbox" id="gen8">
-                </div>
-                <div>
-                    <label for="gen9">Gen 9</label>
-                    <input type="checkbox" id="gen9">
-                </div>
-                <div>
-                    <label for="all">All</label>
-                    <input type="checkbox" id="all">
-                </div>
-                <div>
-                    <label for="test">Test</label>
-                    <input type="checkbox" id="test">
-                </div>
+      <div class="widget" id="poke-random">
+        <h3>Pokémon Randomizer</h3>
+        <div class="checkbox-grid">
+          <div>
+            <label for="gen1">Gen 1</label>
+            <input type="checkbox" id="gen1" />
+          </div>
+          <div>
+            <label for="gen2">Gen 2</label>
+            <input type="checkbox" id="gen2" />
+          </div>
+          <div>
+            <label for="gen3">Gen 3</label>
+            <input type="checkbox" id="gen3" />
+          </div>
+          <div>
+            <label for="gen4">Gen 4</label>
+            <input type="checkbox" id="gen4" />
+          </div>
+          <div>
+            <label for="gen5">Gen 5</label>
+            <input type="checkbox" id="gen5" />
+          </div>
+          <div>
+            <label for="gen6">Gen 6</label>
+            <input type="checkbox" id="gen6" />
+          </div>
+          <div>
+            <label for="gen7">Gen 7</label>
+            <input type="checkbox" id="gen7" />
+          </div>
+          <div>
+            <label for="gen8">Gen 8</label>
+            <input type="checkbox" id="gen8" />
+          </div>
+          <div>
+            <label for="gen9">Gen 9</label>
+            <input type="checkbox" id="gen9" />
+          </div>
+          <div>
+            <label for="all">All</label>
+            <input type="checkbox" id="all" />
+          </div>
+          <div>
+            <label for="test">Test</label>
+            <input type="checkbox" id="test" />
+          </div>
+        </div>
+        <button onClick="getRandomPokemon()">
+          <span class="button-span">Get Random Pokémon</span>
+        </button>
+        <div id="resultPokemon"></div>
+      </div>
+
+      <!-- Times Table Helper -->
+
+      <div class="widget" id="times-table-helper">
+        <h3>Times Table Helper</h3>
+        <form id="times-table-form">
+          <label for="number">Enter a number:</label>
+          <input type="number" id="number" name="number" required />
+          <br />
+          <label for="limit">Enter a Limit:</label>
+          <input type="number" id="limit" name="limit" required />
+          <br />
+          <button type="submit">
+            <span class="button-span">Generate Question</span>
+          </button>
+        </form>
+        <div class="question-section display-none" id="question-section">
+          <p id="question"></p>
+          <input type="number" id="answer" placeholder="Your Answer" />
+          <button id="checkAnswerButton">
+            <span class="button-span">Check Answer</span>
+          </button>
+          <p id="feedback"></p>
+        </div>
+      </div>
+
+      <!-- Fatebringer -->
+
+      <div class="widget" id="decider">
+        <h3>Fatebringer</h3>
+        <p>
+          Can't decide on something? We will choose for you. Just add the
+          options and click the button for the decision.
+        </p>
+        <div class="fatebringer-input-container">
+          <input type="text" id="option" name="option" />
+          <button id="add-option" onClick="addOption()">
+            <span class="button-span">+</span>
+          </button>
+        </div>
+        <div class="option-section display-none" id="option-section">
+          <ul id="option-list"></ul>
+          <button id="choose-option">
+            <span class="button-span" onClick="decideFate()">Choose</span>
+          </button>
+          <p id="final-choice"></p>
+        </div>
+      </div>
+
+      <!-- Weather App -->
+
+      <div class="widget" id="weather">
+        <h3>Weather Checker</h3>
+        <form class="weather-form">
+          <input type="text" class="city-input" placeholer="Enter City" />
+          <button type="submit">
+            <span class="button-span">Get Weather</span>
+          </button>
+        </form>
+
+        <div class="card display-none"></div>
+      </div>
+
+      <!-- Filters -->
+
+      <div class="widget" id="filters">
+        <h3>Filters</h3>
+        <div class="filters-container">
+          <div class="filter-container">
+            <label class="filter-label" for="invert">Invert Colour</label>
+            <input type="range" id="invert" min="0" max="100" value="0" />
+          </div>
+          <div class="filter-container">
+            <label class="filter-label" for="blur">Blur</label>
+            <input type="range" id="blur" min="0" max="30" value="0" />
+          </div>
+          <div class="filter-container">
+            <label class="filter-label" for="contrast">Contrast</label>
+            <input type="range" id="contrast" min="100" max="200" value="100" />
+          </div>
+          <div class="filter-container">
+            <label class="filter-label" for="sepia">Sepia</label>
+            <input type="range" id="sepia" min="0" max="100" value="0" />
+          </div>
+          <div class="filter-container">
+            <label class="filter-label" for="saturate">Saturate</label>
+            <input
+              type="range"
+              id="saturate"
+              min="100"
+              max="1000"
+              value="100"
+            />
+          </div>
+          <div class="filter-container">
+            <label class="filter-label" for="hue-rotate">Hue Rotate</label>
+            <input type="range" id="hue-rotate" min="0" max="360" value="0" />
+          </div>
+          <div class="filter-container">
+            <label class="filter-label" for="grayscale">Grayscale</label>
+            <input type="range" id="grayscale" min="0" max="100" value="0" />
+          </div>
+          <div class="filter-container">
+            <label class="filter-label" for="brightness">Brightness</label>
+            <input
+              type="range"
+              id="brightness"
+              min="100"
+              max="200"
+              value="100"
+            />
+          </div>
+          <div class="filter-container">
+            <label class="filter-label" for="opacity">Opacity</label>
+            <input type="range" id="opacity" min="0" max="100" value="0" />
+          </div>
+        </div>
+        <button id="reset-filters" onclick="resetFilters()">
+          <span class="button-span">Reset Filters</span>
+        </button>
+      </div>
+
+      <!-- Calculator -->
+
+      <div class="widget" id="calculator-container">
+        <h3>Calculator</h3>
+        <div id="calculator">
+          <input class="display" readonly />
+          <div id="keys">
+            <div class="spacer">
+              <button
+                class="calc-button operator-btn"
+                onclick="appendToDisplay('+')"
+              >
+                <span class="button-span">+</span>
+              </button>
             </div>
-            <button onClick="getRandomPokemon()">
-                <span class="button-span">Get Random Pokémon</span>
+            <div class="spacer">
+              <button class="calc-button" onclick="appendToDisplay('7')">
+                <span class="button-span">7</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button class="calc-button" onclick="appendToDisplay('8')">
+                <span class="button-span">8</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button class="calc-button" onclick="appendToDisplay('9')">
+                <span class="button-span">9</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button
+                class="calc-button operator-btn"
+                onclick="appendToDisplay('-')"
+              >
+                <span class="button-span">-</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button class="calc-button" onclick="appendToDisplay('4')">
+                <span class="button-span">4</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button class="calc-button" onclick="appendToDisplay('5')">
+                <span class="button-span">5</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button class="calc-button" onclick="appendToDisplay('6')">
+                <span class="button-span">6</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button
+                class="calc-button operator-btn"
+                onclick="appendToDisplay('*')"
+              >
+                <span class="button-span">*</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button class="calc-button" onclick="appendToDisplay('1')">
+                <span class="button-span">1</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button class="calc-button" onclick="appendToDisplay('2')">
+                <span class="button-span">2</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button class="calc-button" onclick="appendToDisplay('3')">
+                <span class="button-span">3</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button
+                class="calc-button operator-btn"
+                onclick="appendToDisplay('/')"
+              >
+                <span class="button-span">/</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button class="calc-button" onclick="appendToDisplay('0')">
+                <span class="button-span">0</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button class="calc-button" onclick="appendToDisplay('.')">
+                <span class="button-span">.</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button class="calc-button" onclick="calculate()">
+                <span class="button-span">=</span>
+              </button>
+            </div>
+            <div class="spacer">
+              <button class="calc-button operator-btn" onclick="clearDisplay()">
+                <span class="button-span">C</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stopwatch -->
+
+      <div class="widget" id="stopwatch">
+        <h3>Stopwatch</h3>
+        <div id="display">00:00:00:00</div>
+        <div id="controls">
+          <button id="start-button" onclick="start()">
+            <span class="button-span">Start</span>
+          </button>
+          <button id="stop-button" onclick="stop()">
+            <span class="button-span">Stop</span>
+          </button>
+          <button id="reset-button" onclick="reset()">
+            <span class="button-span">Reset</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Random Cat -->
+
+      <div class="widget" id="random-cat">
+        <h3>Random Cat</h3>
+        <div id="cat-container">
+          <img class="display-none" id="cat-image" src="" alt="Random Cat" />
+          <p id="cat-breed"></p>
+          <p id="cat-temp"></p>
+          <p id="cat-origin"></p>
+          <p id="cat-desc"></p>
+        </div>
+        <button id="cat-button" onclick="fetchCat()">
+          <span class="button-span">New Cat</span>
+        </button>
+      </div>
+
+      <!-- Lightswitch -->
+
+      <div class="widget always-on" id="lightswitch">
+        <h3>Light Switch</h3>
+        <p>Do you want to turn off the lights?</p>
+        <img
+          id="off-switch"
+          src="./light-switch-on-svgrepo-com.svg"
+          class="lightswitch-img"
+        />
+        <img
+          id="on-switch"
+          src="./light-switch-off-svgrepo-com.svg"
+          class="lightswitch-img always-on"
+          style="display: none"
+          id="ls-on"
+        />
+      </div>
+
+      <!-- Custom Cursors -->
+
+      <div class="widget" id="custom-cursors">
+        <h3>Custom Cursors</h3>
+        <div class="cursor-container">
+          <button
+            id="cursor1"
+            class="cursor-button"
+            onclick="setCursor('Diamond Sword')"
+          >
+            <span class="button-span cursor-span">
+              <img
+                src="./Diamond Sword.png"
+                alt="Diamond Sword Cursor"
+                class="cursor-img"
+              />
+            </span>
+          </button>
+          <button id="cursor2" class="cursor-button" onclick="setCursor('Cat')">
+            <span class="button-span cursor-span">
+              <img src="./Cat.png" alt="Cat Cursor" class="cursor-img" />
+            </span>
+          </button>
+          <button
+            id="cursor3"
+            class="cursor-button"
+            onclick="setCursor('Pokeball')"
+          >
+            <span class="button-span cursor-span">
+              <img
+                src="./Pokeball.png"
+                alt="Pokeball Cursor"
+                class="cursor-img"
+              />
+            </span>
+          </button>
+          <button
+            id="cursor4"
+            class="cursor-button"
+            onclick="setCursor('Autumn')"
+          >
+            <span class="button-span cursor-span">
+              <img src="./Autumn.png" alt="Autumn Cursor" class="cursor-img" />
+            </span>
+          </button>
+          <button id="cursor5" class="cursor-button" onclick="setCursor('WoW')">
+            <span class="button-span cursor-span">
+              <img
+                src="./WoW.png"
+                alt="World of Warcraft Cursor"
+                class="cursor-img"
+              />
+            </span>
+          </button>
+          <button
+            id="cursor6"
+            class="cursor-button"
+            onclick="setCursor('Sims')"
+          >
+            <span class="button-span cursor-span">
+              <img src="./Sims.png" alt="Sims Cursor" class="cursor-img" />
+            </span>
+          </button>
+          <button
+            id="cursor7"
+            class="cursor-button"
+            onclick="setCursor('Jinx')"
+          >
+            <span class="button-span cursor-span">
+              <img src="./Jinx.png" alt="Jinx Cursor" class="cursor-img" />
+            </span>
+          </button>
+          <button
+            id="cursor8"
+            class="cursor-button"
+            onclick="setCursor('Pooh')"
+          >
+            <span class="button-span cursor-span">
+              <img src="./Pooh.png" alt="Pooh Cursor" class="cursor-img" />
+            </span>
+          </button>
+          <button
+            id="cursor9"
+            class="cursor-button"
+            onclick="setCursor('Butterfly')"
+          >
+            <span class="button-span cursor-span">
+              <img
+                src="./Butterfly.png"
+                alt="Butterfly Cursor"
+                class="cursor-img"
+              />
+            </span>
+          </button>
+          <button
+            id="cursor10"
+            class="cursor-button"
+            onclick="setCursor('Bloodborne')"
+          >
+            <span class="button-span cursor-span">
+              <img
+                src="./Bloodborne.png"
+                alt="Bloodborne Cursor"
+                class="cursor-img"
+              />
+            </span>
+          </button>
+          <button
+            id="cycle-cursor-button"
+            class="cursor-button"
+            onclick="cycleCursor()"
+          >
+            <span class="button-span cursor-span">
+              <img id="cycle-cursor" alt="Cycle Cursor" class="cursor-img" />
+            </span>
+          </button>
+        </div>
+        <div class="cursor-button-container">
+          <button
+            id="ransom-cursor"
+            class="cursor-button"
+            onclick="setCursorRand()"
+          >
+            <span class="button-span cursor-span">Random</span>
+          </button>
+          <button
+            id="reset-cursor"
+            class="cursor-button"
+            onclick="setCursor('default')"
+          >
+            <span class="button-span cursor-span">Reset</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- CPM Test -->
+
+      <div class="widget" id="cpm-test">
+        <h3>Click Speed Test</h3>
+        <div class="cpm-container">
+          <div class="cpm-start" onclick="startCpmTest()">Click to Start</div>
+          <div class="cpm-div display-none"></div>
+        </div>
+        <div class="cpm-timer">5.00</div>
+        <div class="cpm-result"></div>
+        <button class="cpm-reset display-none" onclick="resetCpmTest()">
+          <span class="button-span">Reset</span>
+        </button>
+      </div>
+
+      <!-- Colour Generator -->
+
+      <div class="widget" id="colour-generator">
+        <h3>Colour Generator</h3>
+        <div class="colour-circle display-none"></div>
+        <div id="colour-info" class="colour-info display-block"></div>
+        <div class="clr-btn-cont display-none">
+          <button class="background-button" onclick="setBackground()">
+            <span class="button-span">Set as Background</span>
+          </button>
+          <button class="clr-rst-btn" onclick="resetBackground()">
+            <span class="button-span">Reset</span>
+          </button>
+        </div>
+        <button class="colour-button" onclick="randomColour()">
+          <span class="button-span">Click for a Random Colour</span>
+        </button>
+      </div>
+
+      <!-- Secret 1-->
+
+      <div class="widget" id="secret-1">
+        <h3 id="secret-1-h3"></h3>
+        <input type="text" />
+        <button id="secret-1-btn">
+          <span class="button-span">??????</span>
+        </button>
+      </div>
+
+      <!-- Passcode -->
+
+      <div class="widget" id="passcode">
+        <h3>Enter the Passcode</h3>
+        <p class="passcode-p">Press * to enter</p>
+        <input class="pass-display" readonly />
+        <div class="pass-keys">
+          <div class="spacer">
+            <button class="pass-key" onclick="appendPasskey('7')">
+              <span class="button-span">7</span>
             </button>
-            <div id="resultPokemon"></div>
-        </div>
-
-        <!-- Times Table Helper -->
-
-        <div class="widget" id="times-table-helper">
-            <h3>Times Table Helper</h3>
-            <form id="times-table-form">
-                <label for="number">Enter a number:</label>
-                <input type="number" id="number" name="number" required>
-                <br>
-                <label for="limit">Enter a Limit:</label>
-                <input type="number" id="limit" name="limit" required>
-                <br>
-                <button type="submit">
-                    <span class="button-span">Generate Question</span>
-                </button>
-            </form>
-            <div class="question-section display-none" id="question-section">
-                <p id="question"></p>
-                <input type="number" id="answer" placeholder="Your Answer">
-                <button id="checkAnswerButton">
-                    <span class="button-span">Check Answer</span>
-                </button>
-                <p id="feedback"></p>
-            </div>
-        </div>
-
-        <!-- Fatebringer -->
-    
-        <div class="widget" id="decider">
-            <h3>Fatebringer</h3>
-            <p>Can't decide on something? We will choose for you.
-            Just add the options and click the button for the decision.
-            </p>
-            <div class="fatebringer-input-container">
-                <input type="text" id="option" name="option">
-                <button id="add-option"  onClick="addOption()">
-                    <span class="button-span">+</span>
-                </button>
-            </div>
-            <div class="option-section display-none" id="option-section">
-                <ul id="option-list"></ul>
-                <button id="choose-option">
-                    <span class="button-span" onClick="decideFate()">Choose</span>
-                </button>
-                <p id="final-choice"></p>
-            </div>
-        </div>
-
-        <!-- Weather App -->
-
-        <div class="widget" id="weather">
-            <h3>Weather Checker</h3>
-            <form class="weather-form">
-                <input type="text" class="city-input" placeholer="Enter City">
-                <button type="submit">
-                    <span class="button-span">Get Weather</span>
-                </button>
-            </form>
-
-            <div class="card display-none">
-            </div>
-        </div>
-
-        <!-- Filters -->
-
-        <div class="widget" id="filters">
-            <h3>Filters</h3>
-            <div class="filters-container">
-                <div class="filter-container">
-                    <label class="filter-label" for="invert">Invert Colour</label>
-                    <input type="range" id="invert" min="0" max="100" value="0">
-                </div>
-                <div class="filter-container">
-                    <label class="filter-label" for="blur">Blur</label>
-                    <input type="range" id="blur" min="0" max="30" value="0">
-                </div>
-                <div class="filter-container">
-                    <label class="filter-label" for="contrast">Contrast</label>
-                    <input type="range" id="contrast" min="100" max="200" value="100">
-                </div>
-                <div class="filter-container">
-                    <label class="filter-label" for="sepia">Sepia</label>
-                    <input type="range" id="sepia" min="0" max="100" value="0">
-                </div>
-                <div class="filter-container">
-                    <label class="filter-label" for="saturate">Saturate</label>
-                    <input type="range" id="saturate" min="100" max="1000" value="100">
-                </div>
-                <div class="filter-container">
-                    <label class="filter-label" for="hue-rotate">Hue Rotate</label>
-                    <input type="range" id="hue-rotate" min="0" max="360" value="0">
-                </div>
-                <div class="filter-container">
-                    <label class="filter-label" for="grayscale">Grayscale</label>
-                    <input type="range" id="grayscale" min="0" max="100" value="0">
-                </div>
-                <div class="filter-container">
-                    <label class="filter-label" for="brightness">Brightness</label>
-                    <input type="range" id="brightness" min="100" max="200" value="100">
-                </div>
-                <div class="filter-container">
-                    <label class="filter-label" for="opacity">Opacity</label>
-                    <input type="range" id="opacity" min="0" max="100" value="0">
-                </div>
-            </div>
-            <button id="reset-filters" onclick="resetFilters()">
-                    <span class="button-span">Reset Filters</span> 
+          </div>
+          <div class="spacer">
+            <button class="pass-key" onclick="appendPasskey('8')">
+              <span class="button-span">8</span>
             </button>
-        </div>
-
-        <!-- Calculator -->
-
-        <div class="widget" id="calculator-container">
-            <h3>Calculator</h3>
-                <div id="calculator">
-                <input class="display" readonly>
-                <div id="keys">
-                    <div class="spacer">
-                        <button class="calc-button operator-btn" onclick="appendToDisplay('+')">
-                            <span class="button-span">+</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button" onclick="appendToDisplay('7')">
-                            <span class="button-span">7</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button" onclick="appendToDisplay('8')">
-                            <span class="button-span">8</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button" onclick="appendToDisplay('9')">
-                            <span class="button-span">9</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button operator-btn" onclick="appendToDisplay('-')">
-                            <span class="button-span">-</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button" onclick="appendToDisplay('4')">
-                            <span class="button-span">4</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button" onclick="appendToDisplay('5')">
-                            <span class="button-span">5</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button" onclick="appendToDisplay('6')">
-                            <span class="button-span">6</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button operator-btn" onclick="appendToDisplay('*')">
-                            <span class="button-span">*</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button" onclick="appendToDisplay('1')">
-                            <span class="button-span">1</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button" onclick="appendToDisplay('2')">
-                            <span class="button-span">2</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button" onclick="appendToDisplay('3')">
-                            <span class="button-span">3</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button operator-btn" onclick="appendToDisplay('/')">
-                            <span class="button-span">/</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button" onclick="appendToDisplay('0')">
-                            <span class="button-span">0</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button" onclick="appendToDisplay('.')">
-                            <span class="button-span">.</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button" onclick="calculate()">
-                            <span class="button-span">=</span>
-                        </button>
-                    </div>
-                    <div class="spacer">
-                        <button class="calc-button operator-btn" onclick="clearDisplay()">
-                            <span class="button-span">C</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Stopwatch -->
-
-        <div class="widget" id="stopwatch">
-            <h3>Stopwatch</h3>
-            <div id="display">
-                00:00:00:00
-            </div>
-            <div id="controls">
-                <button id="start-button" onclick="start()">
-                    <span class="button-span">Start</span>
-                </button>
-                <button id="stop-button" onclick="stop()">
-                    <span class="button-span">Stop</span>
-                </button>
-                <button id="reset-button" onclick="reset()">
-                    <span class="button-span">Reset</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Random Cat -->
-
-        <div class="widget" id="random-cat">
-            <h3>Random Cat</h3>
-            <div id="cat-container">
-                <img class="display-none" id="cat-image" src="" alt="Random Cat">
-                <p id="cat-breed"></p>
-                <p id="cat-temp"></p>
-                <p id="cat-origin"></p>
-                <p id="cat-desc"></p>
-            </div>
-            <button id="cat-button" onclick="fetchCat()">
-                <span class="button-span">New Cat</span>
+          </div>
+          <div class="spacer">
+            <button class="pass-key" onclick="appendPasskey('9')">
+              <span class="button-span">9</span>
             </button>
-        </div>
-
-        <!-- Lightswitch -->
-
-        <div class="widget always-on" id="lightswitch">
-            <h3>Light Switch</h3>
-            <p>Do you want to turn off the lights?</p>
-            <img id="off-switch" src="./light-switch-on-svgrepo-com.svg" class="lightswitch-img">
-            <img id="on-switch" src="./light-switch-off-svgrepo-com.svg" class="lightswitch-img always-on" style="display: none" id="ls-on">
-        </div>
-
-        <!-- Custom Cursors -->
-
-        <div class="widget" id="custom-cursors">
-            <h3>Custom Cursors</h3>
-            <div class="cursor-container">
-                <button id="cursor1" class="cursor-button" onclick="setCursor('Diamond Sword')">
-                    <span class="button-span cursor-span">
-                        <img src="./Diamond Sword.png" alt="Diamond Sword Cursor" class="cursor-img">
-                    </span>
-                </button>
-                <button id="cursor2" class="cursor-button" onclick="setCursor('Cat')">
-                    <span class="button-span cursor-span">
-                        <img src="./Cat.png" alt="Cat Cursor" class="cursor-img">
-                    </span>
-                </button>
-                <button id="cursor3" class="cursor-button" onclick="setCursor('Pokeball')">
-                    <span class="button-span cursor-span">
-                        <img src="./Pokeball.png" alt="Pokeball Cursor" class="cursor-img">
-                    </span>
-                </button>
-                <button id="cursor4" class="cursor-button" onclick="setCursor('Autumn')">
-                    <span class="button-span cursor-span">
-                        <img src="./Autumn.png" alt="Autumn Cursor" class="cursor-img">
-                    </span>
-                </button>
-                <button id="cursor5" class="cursor-button" onclick="setCursor('WoW')">
-                    <span class="button-span cursor-span">
-                        <img src="./WoW.png" alt="World of Warcraft Cursor" class="cursor-img">
-                    </span>
-                </button>
-                <button id="cursor6" class="cursor-button" onclick="setCursor('Sims')">
-                    <span class="button-span cursor-span">
-                        <img src="./Sims.png" alt="Sims Cursor" class="cursor-img">
-                    </span>
-                </button>
-                <button id="cursor7" class="cursor-button" onclick="setCursor('Jinx')">
-                    <span class="button-span cursor-span">
-                        <img src="./Jinx.png" alt="Jinx Cursor" class="cursor-img">
-                    </span>
-                </button>
-                <button id="cursor8" class="cursor-button" onclick="setCursor('Pooh')">
-                    <span class="button-span cursor-span">
-                        <img src="./Pooh.png" alt="Pooh Cursor" class="cursor-img">
-                    </span>
-                </button>
-                <button id="cursor9" class="cursor-button" onclick="setCursor('Butterfly')">
-                    <span class="button-span cursor-span">
-                        <img src="./Butterfly.png" alt="Butterfly Cursor" class="cursor-img">
-                    </span>
-                </button>
-                <button id="cursor10" class="cursor-button" onclick="setCursor('Bloodborne')">
-                    <span class="button-span cursor-span">
-                        <img src="./Bloodborne.png" alt="Bloodborne Cursor" class="cursor-img">
-                    </span>
-                </button>
-                <button id="cycle-cursor-button" class="cursor-button" onclick="cycleCursor()">
-                    <span class="button-span cursor-span">
-                        <img id="cycle-cursor" alt="Cycle Cursor" class="cursor-img">                    </span>
-                </button>
-            </div>     
-            <div class="cursor-button-container">   
-                <button id="ransom-cursor" class="cursor-button" onclick="setCursorRand()">
-                    <span class="button-span cursor-span">Random</span>
-                </button>   
-                <button id="reset-cursor" class="cursor-button" onclick="setCursor('default')">
-                    <span class="button-span cursor-span">Reset</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- CPM Test -->
-
-        <div class="widget" id="cpm-test">
-            <h3>Click Speed Test</h3>
-            <div class="cpm-container">
-                <div class="cpm-start" onclick="startCpmTest()">Click to Start</div>
-                <div class="cpm-div display-none"></div>
-            </div>
-            <div class="cpm-timer">5.00</div>
-            <div class="cpm-result"></div>
-            <button class="cpm-reset display-none" onclick="resetCpmTest()">
-                <span class="button-span">Reset</span>
+          </div>
+          <div class="spacer">
+            <button class="pass-key" onclick="appendPasskey('4')">
+              <span class="button-span">4</span>
             </button>
-        </div>
-
-        <!-- Colour Generator -->
-
-        <div class="widget" id="colour-generator">
-            <h3>Colour Generator</h3>
-            <div class="colour-circle display-none"></div>
-            <div id="colour-info" class="colour-info display-block"></div>
-            <button class="colour-button" onclick="randomColour()">
-                <span class="button-span">Click for a Random Colour</span>
+          </div>
+          <div class="spacer">
+            <button class="pass-key" onclick="appendPasskey('5')">
+              <span class="button-span">5</span>
             </button>
-        </div>
-
-        <!-- Secret 1-->
-
-        <div class="widget" id="secret-1">
-            <h3 id="secret-1-h3"></h3>
-            <input type="text">
-            <button id="secret-1-btn">
-                <span class="button-span">??????</span>
+          </div>
+          <div class="spacer">
+            <button class="pass-key" onclick="appendPasskey('6')">
+              <span class="button-span">6</span>
             </button>
+          </div>
+          <div class="spacer">
+            <button class="pass-key" onclick="appendPasskey('1')">
+              <span class="button-span">1</span>
+            </button>
+          </div>
+          <div class="spacer">
+            <button class="pass-key" onclick="appendPasskey('2')">
+              <span class="button-span">2</span>
+            </button>
+          </div>
+          <div class="spacer">
+            <button class="pass-key" onclick="appendPasskey('3')">
+              <span class="button-span">3</span>
+            </button>
+          </div>
+          <div class="spacer">
+            <button class="pass-key" onclick="clearPasscode()">
+              <span class="button-span">C</span>
+            </button>
+          </div>
+          <div class="spacer">
+            <button class="pass-key" onclick="appendPasskey('0')">
+              <span class="button-span">0</span>
+            </button>
+          </div>
+          <div class="spacer">
+            <button class="pass-key" onclick="passcodeSubmit()">
+              <span class="button-span">*</span>
+            </button>
+          </div>
         </div>
+      </div>
+    </div>
 
+<<<<<<< HEAD
         <!-- Passcode -->
 
         <div class="widget" id="passcode">
@@ -547,7 +735,9 @@
         </div>
     </div> 
     
+=======
+>>>>>>> 41aa63c0caa1127604d8c46aba59f26dfb9c70c6
     <script src="script.js"></script>
     <script type="module" src="cube.js"></script>
-</body>
+  </body>
 </html>

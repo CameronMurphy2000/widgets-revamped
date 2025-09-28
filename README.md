@@ -1,10 +1,8 @@
-Widgets Revamped
-================
+# Widgets Revamped
 
 A little website for learning
 
-Finished
---------
+## Finished
 
 > - Currency Converter
 > - Calculator
@@ -13,8 +11,7 @@ Finished
 > - Weather App
 > - Custom Cursors
 
-Working on
-----------
+## Working on
 
 > - Pokémon Randomizer
 > - Fatebringer
@@ -28,8 +25,7 @@ Working on
 > - Passcode
 > - Mouse Playground
 
-Planned
--------
+## Planned
 
 > - Coin Flipper
 > - Translator
@@ -45,15 +41,15 @@ Planned
 > - My Other Projects
 > - Secrets and Puzzles
 > - Rock Paper Scissors
+> - Probability Calculator
 
-Planned Upgrades
-----------------
+## Planned Upgrades
 
 > - Currency Converter
 
-  1. Fix styling for currency select dropdown
-  2. Improve styling for weather app
+1. Fix styling for currency select dropdown
+2. Improve styling for weather app
 
 > - Custom Cursors
 
-  1. More Cursors
+1. More Cursors

@@ -8,7 +8,6 @@ body {
   font-family: "Roboto", sans-serif;
   color: #fff5ee;
   overflow-x: hidden;
-
 }
 
 .title {
@@ -208,6 +207,10 @@ input[type="number"] {
 
 input:focus {
   outline: none;
+}
+
+#feedback {
+  font-size: 1.4rem;
 }
 
 .currency-link {
@@ -450,49 +453,49 @@ select.decorated option:hover {
   font-size: 1.25rem;
 }
 
-
 .colour-circle {
-    height: 6rem;
-    width: 6rem;
-    background: red;
-    border-radius: 50%;
-    margin-bottom: 1rem;
+  height: 6rem;
+  width: 6rem;
+  background: red;
+  border-radius: 50%;
+  margin-bottom: 1rem;
 }
 
 #secret-1-btn span {
-    transition: none;
+  transition: none;
 }
 
 #secret-1-btn span:hover {
-    color: #1e1e1e;
-    transform: rotate(180deg);
+  color: #1e1e1e;
+  transform: rotate(180deg);
 }
 
 .illusion-container {
-    position: sticky;
-    top: 30%;
-    text-align: center;
+  position: sticky;
+  top: 30%;
+  text-align: center;
 }
 
 .illusion {
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 1rem;
-    transition: transform 0.1s linear;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1rem;
+  transition: transform 0.1s linear;
 }
 
 .pass-keys {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-    margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .pass-key {
-    font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }
 
 .passcode-p {
+<<<<<<< HEAD
     font-size: 1.15rem;
     margin: 0.5rem;
 }
@@ -519,4 +522,12 @@ select.decorated option:hover {
   pointer-events: none;
   opacity: 1;
   transition: opacity 0.5s ease-out
+=======
+  font-size: 1.15rem;
+  margin: 0.5rem;
+}
+
+.clr-btn-cont button {
+  margin-bottom: 1rem;
+>>>>>>> 41aa63c0caa1127604d8c46aba59f26dfb9c70c6
 }
