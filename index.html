@@ -28,7 +28,7 @@
       </p>
     </div>
 
-    <div class="grid always-on">
+    <div id="grid" class="grid always-on">
       <!-- Illusion -->
 
       <div class="widget illusion-container" id="illusion-container">
@@ -38,6 +38,7 @@
       <!-- Currency Converter -->
 
       <div class="widget" id="currency">
+        <div class="drag-handle">⠿</div>
         <h3>Currency Converter</h3>
         <a
           class="currency-link"
@@ -71,6 +72,7 @@
       <!-- Pokémon Randomizer -->
 
       <div class="widget" id="poke-random">
+        <div class="drag-handle">⠿</div>
         <h3>Pokémon Randomizer</h3>
         <div class="checkbox-grid">
           <div>
@@ -127,6 +129,7 @@
       <!-- Times Table Helper -->
 
       <div class="widget" id="times-table-helper">
+        <div class="drag-handle">⠿</div>
         <h3>Times Table Helper</h3>
         <form id="times-table-form">
           <label for="number">Enter a number:</label>
@@ -152,6 +155,7 @@
       <!-- Fatebringer -->
 
       <div class="widget" id="decider">
+        <div class="drag-handle">⠿</div>
         <h3>Fatebringer</h3>
         <p>
           Can't decide on something? We will choose for you. Just add the
@@ -175,6 +179,7 @@
       <!-- Weather App -->
 
       <div class="widget" id="weather">
+        <div class="drag-handle">⠿</div>
         <h3>Weather Checker</h3>
         <form class="weather-form">
           <input type="text" class="city-input" placeholer="Enter City" />
@@ -189,6 +194,7 @@
       <!-- Filters -->
 
       <div class="widget" id="filters">
+        <div class="drag-handle">⠿</div>
         <h3>Filters</h3>
         <div class="filters-container">
           <div class="filter-container">
@@ -248,6 +254,7 @@
       <!-- Calculator -->
 
       <div class="widget" id="calculator-container">
+        <div class="drag-handle">⠿</div>
         <h3>Calculator</h3>
         <div id="calculator">
           <input class="display" readonly />
@@ -356,6 +363,7 @@
       <!-- Stopwatch -->
 
       <div class="widget" id="stopwatch">
+        <div class="drag-handle">⠿</div>
         <h3>Stopwatch</h3>
         <div id="display">00:00:00:00</div>
         <div id="controls">
@@ -374,6 +382,7 @@
       <!-- Random Cat -->
 
       <div class="widget" id="random-cat">
+        <div class="drag-handle">⠿</div>
         <h3>Random Cat</h3>
         <div id="cat-container">
           <img class="display-none" id="cat-image" src="" alt="Random Cat" />
@@ -390,6 +399,7 @@
       <!-- Lightswitch -->
 
       <div class="widget always-on" id="lightswitch">
+        <div class="drag-handle">⠿</div>
         <h3>Light Switch</h3>
         <p>Do you want to turn off the lights?</p>
         <img
@@ -409,6 +419,7 @@
       <!-- Custom Cursors -->
 
       <div class="widget" id="custom-cursors">
+        <div class="drag-handle">⠿</div>
         <h3>Custom Cursors</h3>
         <div class="cursor-container">
           <button
@@ -544,6 +555,7 @@
       <!-- CPM Test -->
 
       <div class="widget" id="cpm-test">
+        <div class="drag-handle">⠿</div>
         <h3>Click Speed Test</h3>
         <div class="cpm-container">
           <div class="cpm-start" onclick="startCpmTest()">Click to Start</div>
@@ -559,6 +571,7 @@
       <!-- Colour Generator -->
 
       <div class="widget" id="colour-generator">
+        <div class="drag-handle">⠿</div>
         <h3>Colour Generator</h3>
         <div class="colour-circle display-none"></div>
         <div id="colour-info" class="colour-info display-block"></div>
@@ -578,6 +591,7 @@
       <!-- Secret 1-->
 
       <div class="widget" id="secret-1">
+        <div class="drag-handle">⠿</div>
         <h3 id="secret-1-h3"></h3>
         <input type="text" />
         <button id="secret-1-btn">
@@ -588,6 +602,7 @@
       <!-- Passcode -->
 
       <div class="widget" id="passcode">
+        <div class="drag-handle">⠿</div>
         <h3>Enter the Passcode</h3>
         <p class="passcode-p">Press * to enter</p>
         <input class="pass-display" readonly />
@@ -658,11 +673,24 @@
       <!-- Mouse Playground-->
         
     <div class="widget">
-        <h3>Mouse Playground</h3>
-        <div class="playground"></div>
+      <div class="drag-handle">⠿</div>
+      <h3>Mouse Playground</h3>
+      <div class="playground"></div>
     </div>
     
     </div>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
+    <script>
+      const grid = document.getElementById("grid");
+
+      new Sortable(grid, {
+        animation: 200,
+        handle: ".drag-handle",
+        chosenClass: "sortable-chosen",
+        dragClass: "sortable-drag",
+        ghostClass: "sortable-ghost",
+      });
+    </script>
   </body>
 </html>
