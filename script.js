@@ -2025,6 +2025,30 @@ function passcodeSubmit() {
 // Mouse Playground
 
 const playground = document.querySelector('.playground');
+const circleCursor = document.createElement('div');
+circleCursor.classList.add('circle-cursor');
+playground.appendChild(circleCursor);
+
+function circleCursorF(){
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+    return `rgb(${red}, ${green}, ${blue})`;
+}
+
+circleCursor.style.background = circleCursorF();
+
+  playground.addEventListener('mouseenter', () => {
+    const styleEl = document.getElementById("custom-cursor-style");
+    if (styleEl) styleEl.innerHTML = ``;
+    setCursor('default');
+  });
+
+  playground.addEventListener('mousemove', (e) => {
+    const rect = playground.getBoundingClientRect();
+    circleCursor.style.left = `${e.clientX - rect.left}px`;
+    circleCursor.style.top = `${e.clientY - rect.top}px`;
+});
 
   playground.addEventListener('click', (e) => {
     const circle = document.createElement('div');
@@ -2034,19 +2058,12 @@ const playground = document.querySelector('.playground');
     circle.style.left = `${e.clientX - rect.left}px`;
     circle.style.top = `${e.clientY - rect.top}px`;
 
-    let red = Math.floor(Math.random() * 256);
-    let green = Math.floor(Math.random() * 256);
-    let blue = Math.floor(Math.random() * 256);
-
-    let colour = `rgb(${red}, ${green}, ${blue})`;
-
-    circle.style.background = colour;
+    const currentColour = circleCursor.style.background;
+    circle.style.backgroundColor = currentColour;
 
     playground.appendChild(circle);
 
-    setTimeout(() => {
-      circle.style.opacity = 0;
-    }, 1500);
+    circleCursor.style.background = circleCursorF();
 
     setTimeout(() => {
       circle.remove();

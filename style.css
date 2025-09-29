@@ -510,6 +510,7 @@ select.decorated option:hover {
   border: 1px solid #c8c8c8;
   background: #1e1e1e;
   position: relative;
+  overflow: hidden;
 }
 
 .playground:hover {
@@ -523,25 +524,31 @@ select.decorated option:hover {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.5s ease-out;
   font-size: 1.15rem;
   margin: 0.5rem;
   animation: splash;
-  animation-duration: 5s;
+  animation-duration: 2s;
+}
+
+.circle-cursor {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: background-color 0.25s ease;
 }
 
 @keyframes splash {
   0% {
     width: 1rem;
     height: 1rem;
-  }
-  50% {
-    width: 4rem;
-    height: 4rem;
+    opacity: 1;
   }
   100% {
-    width: 8rem;
-    height: 8rem;
+    width: 50rem;
+    height: 50rem;
+    opacity: 0;
   }
 }
