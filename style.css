@@ -495,9 +495,13 @@ select.decorated option:hover {
 }
 
 .passcode-p {
-<<<<<<< HEAD
     font-size: 1.15rem;
     margin: 0.5rem;
+}
+
+.clr-btn-cont button {
+  margin-bottom: 1rem;
+
 }
 
 .playground {
@@ -521,13 +525,7 @@ select.decorated option:hover {
   transform: translate(-50%, -50%);
   pointer-events: none;
   opacity: 1;
-  transition: opacity 0.5s ease-out
-=======
+  transition: opacity 0.5s ease-out;
   font-size: 1.15rem;
   margin: 0.5rem;
-}
-
-.clr-btn-cont button {
-  margin-bottom: 1rem;
->>>>>>> 41aa63c0caa1127604d8c46aba59f26dfb9c70c6
 }
