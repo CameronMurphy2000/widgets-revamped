@@ -75,6 +75,26 @@ h3 {
   position: relative;
 }
 
+.drag-handle {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  cursor: grab;
+  font-size: 18px;
+  opacity: 0.6;
+  user-select: none;
+}
+
+.drag-handle:hover {
+  opacity: 0.8;
+  cursor: grabbing;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+  opacity: 1;
+}
+
 .from-currency-container,
 .to-currency-container {
   margin-top: 1rem;
