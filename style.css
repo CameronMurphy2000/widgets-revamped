@@ -527,4 +527,21 @@ select.decorated option:hover {
   transition: opacity 0.5s ease-out;
   font-size: 1.15rem;
   margin: 0.5rem;
+  animation: splash;
+  animation-duration: 5s;
+}
+
+@keyframes splash {
+  0% {
+    width: 1rem;
+    height: 1rem;
+  }
+  50% {
+    width: 4rem;
+    height: 4rem;
+  }
+  100% {
+    width: 8rem;
+    height: 8rem;
+  }
 }
