@@ -1,3 +1,31 @@
+// Sort Logic
+
+const grid = document.getElementById("grid");
+const originalOrder = Array.from(grid.children);
+const shuffleReset = document.querySelector('.shuffle-reset');
+
+function isOriginalOrder() {
+  const current = Array.from(grid.children);
+  if (current.length !== originalOrder.length) return false;
+  return current.every((el, idx) => el === originalOrder[idx]);
+}
+
+const sortable = new Sortable(grid, {
+        animation: 200,
+        handle: ".drag-handle",
+        chosenClass: "sortable-chosen",
+        dragClass: "sortable-drag",
+        ghostClass: "sortable-ghost",
+
+        onEnd() {
+          if (isOriginalOrder()) {
+            shuffleReset.style.display = 'none';
+          } else {
+            shuffleReset.style.display = 'block';
+          }
+        }
+});
+
 // Currency Converter
 
 const apiKey = "3d5d4dc5e856270ae07ded59";
@@ -2072,21 +2100,19 @@ circleCursor.style.background = circleCursorF();
 
 // Widget Shuffler
 
-const grid = document.getElementById("grid");
-const shuffleReset = document.querySelector(".shuffle-reset");
-const originalOrder = Array.from(grid.children);
-
 function shuffle() {
-  let children = Array.from(grid.children);
-  for (let i = children.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    [children[i], children[j]] = [children[j], children[i]];
-  }
-  children.forEach(child => grid.appendChild(child));
+  let items = sortable.toArray();
 
-  shuffleReset.style.display = "block";
-};
+  for (let i = items.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+
+  sortable.sort(items);
+  shuffleReset.style.display = 'block';
+}
 
 function resetGrid() {
   originalOrder.forEach(child => grid.appendChild(child));
+  shuffleReset.style.display = "none";
 }
