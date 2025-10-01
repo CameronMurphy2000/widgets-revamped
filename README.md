@@ -10,6 +10,7 @@ A little website for learning
 > - Times Table Helper
 > - Weather App
 > - Custom Cursors
+> - Widget Shuffler
 
 ## Working on
 

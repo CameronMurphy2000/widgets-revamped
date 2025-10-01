@@ -2069,3 +2069,24 @@ circleCursor.style.background = circleCursorF();
       circle.remove();
     }, 2000);
 });
+
+// Widget Shuffler
+
+const grid = document.getElementById("grid");
+const shuffleReset = document.querySelector(".shuffle-reset");
+const originalOrder = Array.from(grid.children);
+
+function shuffle() {
+  let children = Array.from(grid.children);
+  for (let i = children.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [children[i], children[j]] = [children[j], children[i]];
+  }
+  children.forEach(child => grid.appendChild(child));
+
+  shuffleReset.style.display = "block";
+};
+
+function resetGrid() {
+  originalOrder.forEach(child => grid.appendChild(child));
+}
