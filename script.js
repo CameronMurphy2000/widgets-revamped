@@ -1,3 +1,6 @@
+// globals
+const body = document.getElementById("body");
+
 // Sort Logic
 
 const grid = document.getElementById("grid");
@@ -1619,7 +1622,6 @@ async function fetchCat() {
 
 const onSwitch = document.getElementById("on-switch");
 const offSwitch = document.getElementById("off-switch");
-const body = document.getElementById("body");
 const lightswitch = document.getElementById("lightswitch");
 
 function lightsOff() {
@@ -1847,6 +1849,7 @@ function resetCpmTest() {
 // Colour Generator
 
 let colour = "";
+const widgets = grid.querySelectorAll(".widget");
 
 function randomColour() {
   const div = document.querySelector(".colour-circle");
@@ -1873,10 +1876,41 @@ function updateColourInfo(hex, rgb, hsl) {
   backgroundButtons.style.display = "block";
   colourInfoDiv.style.display = "block";
   colourInfoDiv.innerHTML = `
-    <p>Hex: ${hex}</p>
-    <p>RGB: ${rgb}</p>
-    <p>HSL: ${hsl}</p>
+      <p>Hex: <span class="copyable">${hex}</span></p>
+      <p>RGB: <span class="copyable">${rgb}</span></p>
+      <p>HSL: <span class="copyable">${hsl}</span></p>
     `;
+  
+  const copyTexts = colourInfoDiv.querySelectorAll(".copyable");
+
+  copyTexts.forEach(el => {
+    el.addEventListener("click", () => {
+      navigator.clipboard.writeText(el.textContent);
+
+      const msg = document.createElement("div");
+      msg.textContent = "Copied!";
+      msg.style.position = "absolute";
+      msg.style.transform = "translateY(-100%)";
+      msg.style.whiteSpace = "nowrap";
+      msg.style.zIndex = "999";
+
+      const rect = el.getBoundingClientRect();
+      const msgWidth = msg.offsetWidth || 50;
+      msg.style.left = (rect.left + rect.width / 2 + window.scrollX) + "px";
+      msg.style.top = (rect.top + window.scrollY - 5) + "px";
+
+      document.body.appendChild(msg);
+
+      msg.style.left = (rect.left + rect.width / 2 - msg.offsetWidth / 2 + window.scrollX) + "px";
+
+      msg.classList.add("msg");
+      msg.style.transition = "top 2s ease-out";
+      setTimeout(() => {
+        msg.style.top = (rect.top + window.scrollY - 20) + "px";
+      }, 500);
+      setTimeout(() => msg.remove(), 2000);
+    });
+  });
 }
 
 function rgbToHex(r, g, b) {
@@ -1921,14 +1955,30 @@ function rgbToHsl(r, g, b) {
 }
 
 function setBackground() {
-  console.log(colour);
-  const body = document.getElementById("body");
   body.style.background = colour;
 }
 
-function resetBackground() {
-  const body = document.getElementById("body");
+function widgetBackground() {
+  widgets.forEach(widget => {
+    widget.style.background = colour;
+  });
+}
+
+function resetBodyBackground() {
   body.style.background = "#1e1e1e";
+}
+
+function resetWidgetBackground() {
+  widgets.forEach(widget => {
+    widget.style.background = "#373737";
+  });
+}
+
+function resetBackground() {
+  body.style.background = "#1e1e1e";
+  widgets.forEach(widget => {
+    widget.style.background = "#373737";
+  });
 }
 
 // Secret 1

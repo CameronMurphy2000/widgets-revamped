@@ -406,6 +406,7 @@
           id="off-switch"
           src="./light-switch-on-svgrepo-com.svg"
           class="lightswitch-img"
+          alt="off-switch"
         />
         <img
           id="on-switch"
@@ -413,6 +414,7 @@
           class="lightswitch-img always-on"
           style="display: none"
           id="ls-on"
+          alt="on-switch"
         />
       </div>
 
@@ -579,11 +581,20 @@
           <button class="background-button" onclick="setBackground()">
             <span class="button-span">Set as Background</span>
           </button>
+          <button class="widget-background" onclick="widgetBackground()">
+            <span class="button-span">Set as Widget Background</span>
+          </button>
+          <button onclick="resetBodyBackground()">
+            <span class="button-span">Reset Background</span>
+          </button>
+          <button onclick="resetWidgetBackground()">
+            <span class="button-span">Reset Widget Background</span>
+          </button>
           <button class="clr-rst-btn" onclick="resetBackground()">
-            <span class="button-span">Reset</span>
+            <span class="button-span">Reset Both</span>
           </button>
         </div>
-        <button class="colour-button" onclick="randomColour()">
+        <button style="margin-bottom: 2rem;" class="colour-button" onclick="randomColour()">
           <span class="button-span">Click for a Random Colour</span>
         </button>
       </div>
