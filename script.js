@@ -1635,7 +1635,15 @@ function lightsOff() {
     el.style.display = "none";
   });
 
+  if (!body.dataset.prevBackground) {
+    body.dataset.prevBackground = body.style.background || "";
+  }
+
   body.style.background = "black";
+
+  if (!lightswitch.dataset.prevStyle) {
+    lightswitch.dataset.prevStyle = lightswitch.getAttribute("style") || "";
+  }
 
   lightswitch.style.position = "absolute";
   lightswitch.style.top = "50%";
@@ -1662,8 +1670,15 @@ function lightsOn() {
     delete el.dataset.prevDisplay;
   });
 
-  body.style.background = "";
-  lightswitch.style = "";
+  if (body.dataset.prevBackground !== undefined) {
+    body.style.background = body.dataset.prevBackground;
+    delete body.dataset.prevBackground;
+  }
+
+  if (lightswitch.dataset.prevStyle !== undefined) {
+    lightswitch.setAttribute("style", lightswitch.dataset.prevStyle);
+    delete lightswitch.dataset.prevStyle;
+  }
 
   onSwitch.style.display = "none";
   offSwitch.style.display = "block";
