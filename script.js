@@ -2181,3 +2181,24 @@ function resetGrid() {
   originalOrder.forEach(child => grid.appendChild(child));
   shuffleReset.style.display = "none";
 }
+
+// The Time
+
+const clockDisplay = document.getElementById("clock-display");
+const timezoneSelect = document.getElementById("timezone");
+
+function updateClock() {
+  const timezone = timezoneSelect.value;
+  const now = new Date();
+  const timeString = now.toLocaleTimeString("en-US", {
+    timeZone: timezone,
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+});
+  clockDisplay.textContent = timeString;
+}
+
+timezoneSelect.addEventListener("change", updateClock);
+setInterval(updateClock, 1000);
+updateClock();

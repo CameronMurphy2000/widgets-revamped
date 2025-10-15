@@ -594,7 +594,11 @@
             <span class="button-span">Reset Both</span>
           </button>
         </div>
-        <button style="margin-bottom: 2rem;" class="colour-button" onclick="randomColour()">
+        <button
+          style="margin-bottom: 2rem"
+          class="colour-button"
+          onclick="randomColour()"
+        >
           <span class="button-span">Click for a Random Colour</span>
         </button>
       </div>
@@ -682,28 +686,46 @@
       </div>
 
       <!-- Mouse Playground-->
-        
-    <div class="widget">
-      <div class="drag-handle">⠿</div>
-      <h3>Mouse Playground</h3>
-      <div class="playground"></div>
-    </div>
 
-    <!-- Widget Shuffler -->
-
-    <div class="widget">
-      <div class="drag-handle">⠿</div>
-      <h3>Widget Shuffler</h3>
-      <div class="shuffler-btns">
-        <button onclick="shuffle()">
-          <span class="button-span">Shuffle</span>
-        </button>
-        <button class="shuffle-reset display-none" onclick="resetGrid()">
-          <span class="button-span">Reset</span>
-        </button>
+      <div class="widget">
+        <div class="drag-handle">⠿</div>
+        <h3>Mouse Playground</h3>
+        <div class="playground"></div>
       </div>
-    </div>
-    
+
+      <!-- Widget Shuffler -->
+
+      <div class="widget">
+        <div class="drag-handle">⠿</div>
+        <h3>Widget Shuffler</h3>
+        <div class="shuffler-btns">
+          <button onclick="shuffle()">
+            <span class="button-span">Shuffle</span>
+          </button>
+          <button class="shuffle-reset display-none" onclick="resetGrid()">
+            <span class="button-span">Reset</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- The Time -->
+
+      <div class="widget">
+        <div class="drag-handle">⠿</div>
+        <h3>The Time</h3>
+        <div class="clock-content select-wrapper">
+          <select id="timezone" class="decorated">
+            <option value="UTC">UTC</option>
+            <option value="America/New_York">New York (EST)</option>
+            <option value="Europe/London">London (GMT)</option>
+            <option value="Europe/Paris">Paris (CET)</option>
+            <option value="Asia/Tokyo">Tokyo (JST)</option>
+            <option value="Australia/Sydney">Sydney (AEDT)</option>
+          </select>
+          <div id="clock-display" class="clock-display">--:--:--</div>
+        </div>
+      </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
     <script src="script.js"></script>

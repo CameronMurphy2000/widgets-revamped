@@ -609,3 +609,12 @@ select.decorated option:hover {
     opacity: 0;
   }
 }
+
+.clock-content {
+  width: 75%;
+}
+
+.clock-display {
+  padding-top: 1rem;
+  font-size: 1.75rem;
+}
