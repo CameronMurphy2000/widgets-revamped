@@ -2182,6 +2182,7 @@ function resetGrid() {
   shuffleReset.style.display = "none";
 }
 
+<<<<<<< HEAD
 // Penguin Cross
 
 const step1 = document.getElementById("step1");
@@ -2411,3 +2412,25 @@ function addMoney() {
 }
 
 updateMoney();
+=======
+// The Time
+
+const clockDisplay = document.getElementById("clock-display");
+const timezoneSelect = document.getElementById("timezone");
+
+function updateClock() {
+  const timezone = timezoneSelect.value;
+  const now = new Date();
+  const timeString = now.toLocaleTimeString("en-US", {
+    timeZone: timezone,
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+});
+  clockDisplay.textContent = timeString;
+}
+
+timezoneSelect.addEventListener("change", updateClock);
+setInterval(updateClock, 1000);
+updateClock();
+>>>>>>> 0a07de75a378fddbcc5f616a578e8c6ca0765a26

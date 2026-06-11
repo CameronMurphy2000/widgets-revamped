@@ -43,6 +43,7 @@ A little website for learning
 > - Secrets and Puzzles
 > - Rock Paper Scissors
 > - Probability Calculator
+> - Pokemon Card of the Day
 
 ## Planned Upgrades
 

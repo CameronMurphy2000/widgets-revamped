@@ -610,6 +610,7 @@ select.decorated option:hover {
   }
 }
 
+<<<<<<< HEAD
 .penguin-cross-container {
   display: flex;
   flex-direction: column;
@@ -633,4 +634,13 @@ select.decorated option:hover {
 
 .active {
   background: #00ae00;
+=======
+.clock-content {
+  width: 75%;
+}
+
+.clock-display {
+  padding-top: 1rem;
+  font-size: 1.75rem;
+>>>>>>> 0a07de75a378fddbcc5f616a578e8c6ca0765a26
 }
