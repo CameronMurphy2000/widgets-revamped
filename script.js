@@ -2181,3 +2181,233 @@ function resetGrid() {
   originalOrder.forEach(child => grid.appendChild(child));
   shuffleReset.style.display = "none";
 }
+
+// Penguin Cross
+
+const step1 = document.getElementById("step1");
+const step2 = document.getElementById("step2");
+const step3 = document.getElementById("step3");
+const step4 = document.getElementById("step4");
+const step5 = document.getElementById("step5");
+const step6 = document.getElementById("step6");
+const step7 = document.getElementById("step7");
+const step8 = document.getElementById("step8");
+const step9 = document.getElementById("step9");
+const step10 = document.getElementById("step10");
+
+const multiplierText = document.getElementById("penguinMulti");
+
+const money = document.getElementById("currentMoney");
+
+const stepBtn = document.getElementById("step");
+const cashOutBtn = document.getElementById("cash");
+
+const steps = [step1, step2, step3, step4, step5, step6, step7, step8, step9, step10];
+const betFinder = document.getElementById("betAmount");
+
+let currentCash = 1000;
+let currentStep = 1;
+let activeBet = 0;
+let currentMultipler = 1;
+let roundActive = false;
+
+stepBtn.addEventListener("click", () => {
+  if (!roundActive) {
+    activeBet = parseInt(betFinder.value);
+
+    if (isNaN(activeBet) || activeBet <= 0) {
+      alert("Please enter a valid bet amount");
+      return;
+    }
+
+    if (activeBet > currentCash) {
+      alert("Please enter a valid bet amount!");
+      return;
+    }
+
+    roundActive = true;
+    currentCash -= activeBet;
+    updateMoney();
+  }
+
+  let stepSucceeded = true;
+
+  if (currentStep !== 1) {
+    stepSucceeded = tryStep(currentStep);
+  }
+
+  if (!stepSucceeded) {
+    roundActive = false;
+    currentStep = 1;
+    activeBet = 0;
+    currentMultipler = 1;
+    multiplierText.textContent = `x${currentMultipler}`;
+
+    steps.forEach((step) => {
+      step.classList.remove("active");
+    });
+
+    return;
+  }
+
+  steps[currentStep - 1].classList.add("active");
+  updateMultiplier();
+
+  if (currentStep === 10) {
+    currentCash += activeBet * currentMultipler;
+    updateMoney();
+
+    roundActive = false;
+    currentStep = 1;
+    activeBet = 0;
+    currentMultipler = 1;
+    multiplierText.textContent = `x${currentMultipler}`;
+
+    steps.forEach((step) => {
+      step.classList.remove("active");
+    });
+
+    return;
+  }
+
+  currentStep++;
+});
+
+function tryStep(step) {
+  let num = Math.floor(Math.random() * 100 + 1);
+  switch (step) {
+        case 2:
+            if (num <= 81) {
+                return true;
+            } else {
+                return false;
+            }
+            break;
+        case 3:
+            if (num <= 80) {
+                return true;
+            } else {
+                return false;
+            }
+            break;
+        case 4:
+            if (num <= 75) {
+                return true;
+            } else {
+                return false;
+            }
+            break;
+        case 5:
+            if (num <= 67) {
+                return true;
+            } else {
+                return false;
+            }
+            break;
+        case 6:
+            if (num <= 75) {
+                return true;
+            } else {
+                return false;
+            }
+            break;
+        case 7:
+            if (num <= 50) {
+                return true;
+            } else {
+                return false;
+            }
+            break;
+        case 8:
+            if (num <= 75) {
+                return true;
+            } else {
+                return false;
+            }
+            break;
+        case 9:
+            if (num <= 35) {
+                return true;
+            } else {
+                return false;
+            }
+            break;
+        case 10:
+            if (num <= 20) {
+                return true;
+            } else {
+                return false;
+            }
+            break;
+    }
+}
+
+const updateMultiplier = () => {
+    switch (currentStep) {
+        case 1: 
+            currentMultiplier = 1;
+            multiplierText.textContent = `x${currentMultiplier}`;
+            break;
+        case 2: 
+            currentMultiplier = 1.2;
+            multiplierText.textContent = `x${currentMultiplier}`;
+            break;
+        case 3: 
+            currentMultiplier = 1.5;
+            multiplierText.textContent = `x${currentMultiplier}`;
+            break;
+        case 4: 
+            currentMultiplier = 2;
+            multiplierText.textContent = `x${currentMultiplier}`;
+            break;
+        case 5: 
+            currentMultiplier = 3;
+            multiplierText.textContent = `x${currentMultiplier}`;
+            break;
+        case 6: 
+            currentMultiplier = 4;
+            multiplierText.textContent = `x${currentMultiplier}`;
+            break;
+        case 7: 
+            currentMultiplier = 8;
+            multiplierText.textContent = `x${currentMultiplier}`;
+            break;
+        case 8: 
+            currentMultiplier = 10;
+            multiplierText.textContent = `x${currentMultiplier}`;
+            break;
+        case 9: 
+            currentMultiplier = 25;
+            multiplierText.textContent = `x${currentMultiplier}`;
+            break;
+        case 10: 
+            currentMultiplier = 100;
+            multiplierText.textContent = `x${currentMultiplier}`;
+            break;
+    }
+};
+
+cashOutBtn.addEventListener("click", () => {
+    if (roundActive) {
+        currentCash += activeBet * currentMultiplier;
+        updateMoney();
+        roundActive = false;
+        currentStep = 1;
+        activeBet = 0;
+        currentMultiplier = 1;
+        multiplierText.textContent = `x${currentMultiplier}`;
+        steps.forEach((step) => {step.classList.remove("active");
+        });
+    }
+});
+
+function updateMoney() {
+    money.textContent = `Current Money: $${currentCash}`;
+}
+
+function addMoney() {
+    currentCash += 1000;
+    updateMoney();
+}
+
+updateMoney();

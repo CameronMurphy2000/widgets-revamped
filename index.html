@@ -703,6 +703,45 @@
         </button>
       </div>
     </div>
+
+    <!-- Penguin Cross -->
+
+    <div class="widget">
+      <div class="drag-handle">⠿</div>
+      <h3>Penguin Cross</h3>
+      <div class="penguin-cross-container">
+        <p id="penguinMulti"></p>
+        <div class="steps">
+          <div class="step" id="step1"></div>
+          <div class="step" id="step2"></div>
+          <div class="step" id="step3"></div>
+          <div class="step" id="step4"></div>
+          <div class="step" id="step5"></div>
+          <div class="step" id="step6"></div>
+          <div class="step" id="step7"></div>
+          <div class="step" id="step8"></div>
+          <div class="step" id="step9"></div>
+          <div class="step" id="step10"></div>
+        </div>
+
+        <div class="bet-area">
+          <input type="number" id="betAmount">
+          <button id="cash">
+            <span class="button-span">Cash Out</span>
+          </button>
+          <button id="step">
+            <span class="button-span">Next Step</span>
+          </button>
+        </div>
+
+        <div class="money">
+          <p id="currentMoney"></p>
+          <button id="addMoney" onclick="addMoney()">
+            <span class="button-span">Add Money</span>
+          </button>
+        </div>
+      </div>
+    </div>
     
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>

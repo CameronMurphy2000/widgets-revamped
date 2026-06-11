@@ -609,3 +609,28 @@ select.decorated option:hover {
     opacity: 0;
   }
 }
+
+.penguin-cross-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.steps {
+  display: flex;
+  flex-direction: row;
+}
+
+.step {
+  background: #1e1e1e;
+  padding: 0;
+  border-radius: 10px;
+  height: 1rem;
+  width: 1rem;
+  margin: 5px;
+}
+
+.active {
+  background: #00ae00;
+}
