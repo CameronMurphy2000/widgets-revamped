@@ -2182,7 +2182,6 @@ function resetGrid() {
   shuffleReset.style.display = "none";
 }
 
-<<<<<<< HEAD
 // Penguin Cross
 
 const step1 = document.getElementById("step1");
@@ -2412,7 +2411,7 @@ function addMoney() {
 }
 
 updateMoney();
-=======
+
 // The Time
 
 const clockDisplay = document.getElementById("clock-display");
@@ -2433,4 +2432,3 @@ function updateClock() {
 timezoneSelect.addEventListener("change", updateClock);
 setInterval(updateClock, 1000);
 updateClock();
->>>>>>> 0a07de75a378fddbcc5f616a578e8c6ca0765a26
